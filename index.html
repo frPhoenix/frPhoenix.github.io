@@ -229,6 +229,930 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/04/Lumen-laravel添加全局自定义函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/04/Lumen-laravel添加全局自定义函数/" itemprop="url">Lumen/laravel添加全局自定义函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T10:52:22+08:00">
+                2018-10-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="创建自定义文件"><a href="#创建自定义文件" class="headerlink" title="创建自定义文件"></a>创建自定义文件</h4><ul>
+<li>在任意文件夹下新建一个 functions.php 文件</li>
+<li>如：”app/Common/Functions/functions.php”</li>
+</ul>
+<h4 id="配置自动加载"><a href="#配置自动加载" class="headerlink" title="配置自动加载"></a>配置自动加载</h4><ul>
+<li>在 composer.json 文件中添加配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;autoload&quot;: &#123;</span><br><span class="line">        &quot;files&quot;: [</span><br><span class="line">            &quot;app/Common/Functions/functions.php&quot;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="重新加载配置"><a href="#重新加载配置" class="headerlink" title="重新加载配置"></a>重新加载配置</h4><ul>
+<li>运行命令：$ composer dump-auto</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/04/Lumen-laravel使用UUID/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/04/Lumen-laravel使用UUID/" itemprop="url">Lumen/laravel使用UUID</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T10:51:54+08:00">
+                2018-10-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="安装Uuid"><a href="#安装Uuid" class="headerlink" title="安装Uuid"></a>安装Uuid</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require webpatser/laravel-uuid</span><br></pre></td></tr></table></figure>
+<h3 id="配置全局函数使用-UUID"><a href="#配置全局函数使用-UUID" class="headerlink" title="配置全局函数使用 UUID"></a>配置全局函数使用 UUID</h3><ul>
+<li>配置全局函数得方法参照另外一篇 《添加全局自定义函数》</li>
+<li>在全局函数文件中添加如下代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">use Webpatser\Uuid\Uuid;</span><br><span class="line">/**</span><br><span class="line"> * 生成 uuid  &quot;de99ff30-6d4c-11e8-b243-27600b662ccc&quot;</span><br><span class="line"> * @return string</span><br><span class="line"> */</span><br><span class="line">function uuid() &#123;</span><br><span class="line">    return Uuid::generate()-&gt;string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/02/编程艺术中的优质代码片段/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/02/编程艺术中的优质代码片段/" itemprop="url">编程艺术中的优质代码片段</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T10:21:54+08:00">
+                2018-10-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="获取-XMLHttpRequest-对象-（兼容处理）"><a href="#获取-XMLHttpRequest-对象-（兼容处理）" class="headerlink" title="获取 XMLHttpRequest 对象 （兼容处理）"></a>获取 XMLHttpRequest 对象 （兼容处理）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function getHTTPObject () &#123;</span><br><span class="line">	if (typeof XMLHttpRequest == &apos;undefined&apos;)</span><br><span class="line">		XMLHttpRequest = function () &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				return new ActiveXObject(&apos;Msxml2.XMLHTTP.6.0&apos;);</span><br><span class="line">			&#125; catch (e) &#123;&#125;</span><br><span class="line">			try &#123;</span><br><span class="line">				return new ActiveXObject(&apos;Msxml2.XMLHTTP.3.0&apos;);</span><br><span class="line">			&#125; catch (e) &#123;&#125;</span><br><span class="line">			try &#123;</span><br><span class="line">				return new ActiveXObject(&apos;Msxml2.XMLHTTP&apos;);</span><br><span class="line">			&#125; catch (e) &#123;&#125;</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">	return new XMLHttpRequest();</span><br><span class="line">&#125;</span><br><span class="line">// 获取</span><br><span class="line">let request = getHTTPRequest();</span><br></pre></td></tr></table></figure>
+<h2 id="获取下一个元素节点"><a href="#获取下一个元素节点" class="headerlink" title="获取下一个元素节点"></a>获取下一个元素节点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function getNextElement (node) &#123;</span><br><span class="line">	if (node.nodeType == 1) &#123;</span><br><span class="line">		return node;</span><br><span class="line">	&#125;</span><br><span class="line">	if (node.nextSibling) &#123;</span><br><span class="line">		return getNextElement(node.nextSibling);</span><br><span class="line">	&#125;</span><br><span class="line">	return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="追加-className"><a href="#追加-className" class="headerlink" title="追加 className"></a>追加 className</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function addClass (element, value) &#123;</span><br><span class="line">	if (!element.className)&#123;</span><br><span class="line">		element.className = value;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		var newClassName = element.className;</span><br><span class="line">		newClassName += &apos; &apos;;</span><br><span class="line">		newClassName += value;</span><br><span class="line">		element.className = newClassName;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/01/DOM相关基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/01/DOM相关基础/" itemprop="url">DOM Core 与 HTML-DOM 的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-01T22:15:30+08:00">
+                2018-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>DOM Core 与 HTML-DOM 都是为操作元素或元素属性。只是 DOM Core 是通过相关方法来实现，HTML-DOM 是通过操作对象属性实现。<br>例如：</p>
+<ol>
+<li><p>HTML-DOM提供了一个 forms 对象，这个对象可以把下面的语句：</p>
+ <figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">简化为</span><br><span class="line">``` document.forms</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>HTML-DOM为图片提供 src 属性可以把下面的语句：</p>
+ <figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">简化为</span><br><span class="line">``` element.src</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>HTML-DOM为链接提供 href 属性可以把下面的语句：</p>
+ <figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">简化为</span><br><span class="line">``` element.href</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/09/30/handleImg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/30/handleImg/" itemprop="url">img 标签的相关操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T15:01:01+08:00">
+                2018-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="等比缩放"><a href="#等比缩放" class="headerlink" title="等比缩放"></a>等比缩放</h3><pre><code>只设置 img 标签的宽度，不设置高度
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.logo &gt; img &#123;</span><br><span class="line">	width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="禁用对图片的操作"><a href="#禁用对图片的操作" class="headerlink" title="禁用对图片的操作"></a>禁用对图片的操作</h3><ol>
+<li><code>ondragstart=&quot;return false;&quot;</code> // 禁止拖拽图片</li>
+<li><code>oncontextmenu=&quot;return false;&quot;</code> // 禁止鼠标右键</li>
+<li><code>ondragstart=&quot;return false;&quot;</code> // 禁止鼠标拖动</li>
+<li><code>onselectstart=&quot;return false;&quot;</code> // 文字禁止鼠标选中</li>
+<li><code>onselect=&quot;document.selection.empty();&quot;</code> // 禁止复制文本<br>使用方法如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;../images/logo.png&quot; ondragstart=&quot;return false;&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/09/30/移动端自动设置字体大小/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/30/移动端自动设置字体大小/" itemprop="url">移动端自动设置字体大小</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T11:25:55+08:00">
+                2018-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>来自：<a href="https://segmentfault.com/a/1190000004189237" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004189237</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line">!function(win, lib) &#123;</span><br><span class="line">    var timer,</span><br><span class="line">        doc     = win.document,</span><br><span class="line">        docElem = doc.documentElement,</span><br><span class="line"></span><br><span class="line">        vpMeta   = doc.querySelector(&apos;meta[name=&quot;viewport&quot;]&apos;),</span><br><span class="line">        flexMeta = doc.querySelector(&apos;meta[name=&quot;flexible&quot;]&apos;),</span><br><span class="line"> </span><br><span class="line">        dpr   = 0,</span><br><span class="line">        scale = 0,</span><br><span class="line"> </span><br><span class="line">        flexible = lib.flexible || (lib.flexible = &#123;&#125;);</span><br><span class="line"> 	</span><br><span class="line">	console.log(vpMeta, flexMeta)</span><br><span class="line">    // 设置了 viewport meta</span><br><span class="line">    if (vpMeta) &#123;</span><br><span class="line">        console.warn(&quot;将根据已有的meta标签来设置缩放比例&quot;);</span><br><span class="line">        var initial = vpMeta.getAttribute(&quot;content&quot;).match(/initial\-scale=([\d\.]+)/);</span><br><span class="line"> </span><br><span class="line">        if (initial) &#123;</span><br><span class="line">            scale = parseFloat(initial[1]); // 已设置的 initialScale</span><br><span class="line">            dpr = parseInt(1 / scale);      // 设备像素比 devicePixelRatio</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">    // 设置了 flexible Meta</span><br><span class="line">    else if (flexMeta) &#123;</span><br><span class="line">        var flexMetaContent = flexMeta.getAttribute(&quot;content&quot;);</span><br><span class="line">        if (flexMetaContent) &#123;</span><br><span class="line"> </span><br><span class="line">            var initial = flexMetaContent.match(/initial\-dpr=([\d\.]+)/),</span><br><span class="line">                maximum = flexMetaContent.match(/maximum\-dpr=([\d\.]+)/);</span><br><span class="line"> </span><br><span class="line">            if (initial) &#123;</span><br><span class="line">                dpr = parseFloat(initial[1]);</span><br><span class="line">                scale = parseFloat((1 / dpr).toFixed(2));</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line">            if (maximum) &#123;</span><br><span class="line">                dpr = parseFloat(maximum[1]);</span><br><span class="line">                scale = parseFloat((1 / dpr).toFixed(2));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // viewport 或 flexible</span><br><span class="line">    // meta 均未设置</span><br><span class="line">    if (!dpr &amp;&amp; !scale) &#123;</span><br><span class="line">        // QST</span><br><span class="line">        // 这里的 第一句有什么用 ?</span><br><span class="line">        // 和 Android 有毛关系 ?</span><br><span class="line">        var u = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi)),</span><br><span class="line">            _dpr = win.devicePixelRatio;</span><br><span class="line"> </span><br><span class="line">        // 所以这里似乎是将所有 Android 设备都设置为 1 了</span><br><span class="line">        dpr = u ? ( (_dpr &gt;= 3 &amp;&amp; (!dpr || dpr &gt;= 3))</span><br><span class="line">                        ? 3</span><br><span class="line">                        : (_dpr &gt;= 2 &amp;&amp; (!dpr || dpr &gt;= 2))</span><br><span class="line">                            ? 2</span><br><span class="line">                            : 1</span><br><span class="line">                  )</span><br><span class="line">                : 1;</span><br><span class="line"> </span><br><span class="line">        scale = 1 / dpr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	docElem.setAttribute(&quot;data-dpr&quot;, dpr);</span><br><span class="line"></span><br><span class="line">    // 插入 viewport meta</span><br><span class="line">    if (!vpMeta) &#123;</span><br><span class="line">        vpMeta = doc.createElement(&quot;meta&quot;);</span><br><span class="line">         </span><br><span class="line">        vpMeta.setAttribute(&quot;name&quot;, &quot;viewport&quot;);</span><br><span class="line">        vpMeta.setAttribute(&quot;content&quot;,</span><br><span class="line">            &quot;initial-scale=&quot; + scale + &quot;, maximum-scale=&quot; + scale + &quot;, minimum-scale=&quot; + scale + &quot;, user-scalable=no&quot;);</span><br><span class="line"> </span><br><span class="line">        if (docElem.firstElementChild) &#123;</span><br><span class="line">            docElem.firstElementChild.appendChild(vpMeta)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            var div = doc.createElement(&quot;div&quot;);</span><br><span class="line">            div.appendChild(vpMeta);</span><br><span class="line">            doc.write(div.innerHTML);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function setFontSize() &#123;</span><br><span class="line">        var winWidth = docElem.getBoundingClientRect().width;</span><br><span class="line"> </span><br><span class="line">        if (winWidth / dpr &gt; 540) &#123;</span><br><span class="line">            (winWidth = 540 * dpr);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        // 根节点 fontSize 根据宽度决定</span><br><span class="line">        var baseSize = winWidth / 10;</span><br><span class="line"> </span><br><span class="line">        docElem.style.fontSize = baseSize + &quot;px&quot;;</span><br><span class="line">        flexible.rem = win.rem = baseSize;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    // 调整窗口时重置</span><br><span class="line">    win.addEventListener(&quot;resize&quot;, function() &#123;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        timer = setTimeout(setFontSize, 300);</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">    // 这一段是我自己加的</span><br><span class="line">    // orientationchange（设备的纵横方向改变）时也需要重算下吧</span><br><span class="line">    win.addEventListener(&quot;orientationchange&quot;, function() &#123;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        timer = setTimeout(setFontSize, 300);</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // pageshow</span><br><span class="line">    // keyword: 倒退 缓存相关</span><br><span class="line">    win.addEventListener(&quot;pageshow&quot;, function(e) &#123;</span><br><span class="line">        if (e.persisted) &#123;</span><br><span class="line">            clearTimeout(timer);</span><br><span class="line">            timer = setTimeout(setFontSize, 300);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line">    // 设置基准字体</span><br><span class="line">    if (&quot;complete&quot; === doc.readyState) &#123;</span><br><span class="line">        doc.body.style.fontSize = 12 * dpr + &quot;px&quot;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        doc.addEventListener(&quot;DOMContentLoaded&quot;, function() &#123;</span><br><span class="line">            doc.body.style.fontSize = 12 * dpr + &quot;px&quot;;</span><br><span class="line">        &#125;, false);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	setFontSize();</span><br><span class="line"></span><br><span class="line">	flexible.dpr = win.dpr = dpr;</span><br><span class="line"></span><br><span class="line">	flexible.refreshRem = setFontSize;</span><br><span class="line"></span><br><span class="line">    flexible.rem2px = function(d) &#123;</span><br><span class="line">        var c = parseFloat(d) * this.rem;</span><br><span class="line">        if (&quot;string&quot; == typeof d &amp;&amp; d.match(/rem$/)) &#123;</span><br><span class="line">            c += &quot;px&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return c;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    flexible.px2rem = function(d) &#123;</span><br><span class="line">        var c = parseFloat(d) / this.rem;</span><br><span class="line">         </span><br><span class="line">        if (&quot;string&quot; == typeof d &amp;&amp; d.match(/px$/)) &#123;</span><br><span class="line">            c += &quot;rem&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(window, window.lib || (window.lib = &#123;&#125;));</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/09/30/layuiZoomTable/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/30/layuiZoomTable/" itemprop="url">layUI速查表</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T09:39:28+08:00">
+                2018-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="常用class"><a href="#常用class" class="headerlink" title="常用class"></a>常用class</h1><table>
+<thead>
+<tr>
+<th style="text-align:left">class名</th>
+<th style="text-align:left">作用</th>
+<th style="text-align:left">注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">layui-container</td>
+<td style="text-align:left">内容</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">layui-fluid</td>
+<td style="text-align:left">内容</td>
+<td style="text-align:left">宽度将不会固定，而是 100% 适应</td>
+</tr>
+<tr>
+<td style="text-align:left">layui-row</td>
+<td style="text-align:left">行</td>
+<td style="text-align:left">栅格系统的行，共12列</td>
+</tr>
+<tr>
+<td style="text-align:left">layui-col-xs*</td>
+<td style="text-align:left">列</td>
+<td style="text-align:left">超小屏（手机&lt;768px）</td>
+</tr>
+<tr>
+<td style="text-align:left">layui-col-sm*</td>
+<td style="text-align:left">列</td>
+<td style="text-align:left">小屏幕(平板≥768px）</td>
+</tr>
+<tr>
+<td style="text-align:left">layui-col-md*</td>
+<td style="text-align:left">列</td>
+<td style="text-align:left">中等屏幕(桌面≥992px)</td>
+</tr>
+<tr>
+<td style="text-align:left">layui-col-lg*</td>
+<td style="text-align:left">列</td>
+<td style="text-align:left">大型屏幕(桌面≥1200px)</td>
+</tr>
+<tr>
+<td style="text-align:left">layui-col-space1</td>
+<td style="text-align:left">列之间间隔 1px</td>
+<td style="text-align:left">另外还有值为：3、5、8、10、12、15、18、20、22、28、30</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/09/29/useNginx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -646,7 +1570,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
