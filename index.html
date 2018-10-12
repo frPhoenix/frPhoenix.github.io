@@ -300,79 +300,138 @@
       
         
           
-            <h1 id="1-在GitHub上创建一个仓库"><a href="#1-在GitHub上创建一个仓库" class="headerlink" title="1. 在GitHub上创建一个仓库"></a>1. 在GitHub上创建一个仓库</h1><ul>
-<li><ol>
-<li>先注册一个GitHub账号，官网：<code>https://github.com</code>，或者在码云（<code>https://gitee.com</code>）、Coding（<code>https://coding.net</code>）上注册页可以</li>
-</ol>
+            <h1 id="在GitHub上创建一个仓库"><a href="#在GitHub上创建一个仓库" class="headerlink" title="在GitHub上创建一个仓库"></a>在GitHub上创建一个仓库</h1><ol>
+<li><p>先注册一个GitHub账号，官网：<code>https://github.com</code>，或者在码云（<code>https://gitee.com</code>）、Coding（<code>https://coding.net</code>）上注册页可以</p>
 </li>
-<li><ol start="2">
-<li>新建项目（创建仓库），创建完成后会得到仓库地址，我的项目名是<code>test</code>。如：<code>https://github.com/你的用户名/test.git</code></li>
-</ol>
+<li><p>新建项目（创建仓库），创建完成后会得到仓库地址，我的项目名是<code>test</code>。如：<code>https://github.com/你的用户名/test.git</code></p>
 </li>
-</ul>
-<h1 id="2-将新建的仓库克隆到本地"><a href="#2-将新建的仓库克隆到本地" class="headerlink" title="2. 将新建的仓库克隆到本地"></a>2. 将新建的仓库克隆到本地</h1><ul>
-<li><ol>
+</ol>
+<h1 id="将新建的仓库克隆到本地"><a href="#将新建的仓库克隆到本地" class="headerlink" title="将新建的仓库克隆到本地"></a>将新建的仓库克隆到本地</h1><ol>
 <li><p>打开终端并切换到指定目录（你想将项目放在哪个目录下）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$: cd Web/Git/</span><br></pre></td></tr></table></figure>
-<p>通过<code>pwd</code>命令查看路径为：<code>/Users/phoenix/Web/Git</code><br>注：我的是 MAC 环境</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$: cd Web/Git/</span><br></pre></td></tr></table></figure>
+<p> 通过<code>pwd</code>命令查看路径为：<code>/Users/phoenix/Web/Git</code><br> 注：我的是 MAC 环境</p>
 </li>
-</ol>
-</li>
-<li><ol start="2">
 <li><p>克隆项目</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$: git clone https://github.com/你的用户名/test.git</span><br></pre></td></tr></table></figure>
-<p>克隆完成后在我的 Git 文件夹下多了一个 test 文件夹。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$: git clone https://github.com/你的用户名/test.git</span><br></pre></td></tr></table></figure>
+<p> 克隆完成后在我的 Git 文件夹下多了一个 test 文件夹。</p>
 </li>
 </ol>
-</li>
-</ul>
 <h1 id="提交修改到-master-分支"><a href="#提交修改到-master-分支" class="headerlink" title="提交修改到 master 分支"></a>提交修改到 <code>master</code> 分支</h1><pre><code>初健项目时就有一个master分支（一般为主分支），且只有一个master分支
-</code></pre><ul>
-<li><ol>
-<li>在test文件夹（项目文件夹）下新建一个 <code>test1.txt</code> 文件，里面填写内容‘第一次提交’</li>
-</ol>
+</code></pre><ol>
+<li><p>在test文件夹（项目文件夹）下新建一个 <code>test1.txt</code> 文件，里面填写内容‘第一次提交’</p>
 </li>
-<li><ol start="2">
-<li>使用 <code>git status</code> 命令可以看到工作目录和暂存区的状态<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line"></span><br><span class="line">	test1.txt</span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
+<li><p>使用 <code>git status</code> 命令可以看到工作目录和暂存区的状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line"></span><br><span class="line">	test1.txt</span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-</li>
-<li><ol start="3">
 <li><p>要将新添加的文件（或新修改的内容）提交到远端仓库，就要用<code>git add</code>命令将要提交的内容添加到暂存区（staging area）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add test1.txt # git add 文件名 ，是将指定文件添加进暂存区</span><br><span class="line">git add . # 是将所有改动的内容（或新增文件）添加进暂存区</span><br></pre></td></tr></table></figure>
-<p>将<code>test1.txt</code>文件添加到暂存区后在使用<code>git status</code>命令查看状态，得：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add test1.txt # git add 文件名 ，是将指定文件添加进暂存区</span><br><span class="line">git add . # 是将所有改动的内容（或新增文件）添加进暂存区</span><br></pre></td></tr></table></figure>
+<p> 将<code>test1.txt</code>文件添加到暂存区后在使用<code>git status</code>命令查看状态，得提示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span><br><span class="line"></span><br><span class="line">	new file:   test1.txt</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-</li>
-<li><ol start="4">
 <li><p>使用<code>git rm</code>命令可以将暂存区里的内容移除</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm -f &lt;file&gt;: 强制从staging区移除文件,同时也移除出工作目录.</span><br><span class="line">   git rm --cachedf &lt;file&gt;: 从staging区移除文件,但留在工作目录中.</span><br></pre></td></tr></table></figure>
-<p>运行命令<code>git rm --cached test1.txt</code>后在运行命令<code>git status</code>, 得</p>
+<p> 运行命令<code>git rm --cached test1.txt</code>后在运行命令<code>git status</code>, 得提示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line"></span><br><span class="line">	test1.txt</span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
-<p>说明：<code>git rm --cached &lt;file&gt;</code>从staging区移除文件,但留在工作目录中</p>
-<p>如果运行<code>git rm -f test1.txt</code>, 那么项目文件夹下也没有 test1.txt 文件了，因为<code>git rm -f &lt;file&gt;</code> 强制从staging区移除文件,同时也移除出工作目录.</p>
+<p> 说明：<code>git rm --cached &lt;file&gt;</code>从staging区移除文件,但留在工作目录中</p>
+<p> 如果运行<code>git rm -f test1.txt</code>, 那么项目文件夹下也没有 test1.txt 文件了，因为<code>git rm -f &lt;file&gt;</code> 强制从staging区移除文件,同时也移除出工作目录.</p>
 </li>
-</ol>
-</li>
-<li><ol start="5">
 <li><p>重新来一次，将文件添加到暂存区后不移除。使用<code>git commit</code>提交已经被add进来的改动.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit -m “the commit message&quot;</span><br><span class="line">   git commit -a 会先把所有已经track的文件的改动add进来,然后提交(有点像svn的一次提交,不用先暂存). 对于没有track的文件,还是需要git add一下.</span><br><span class="line">   git commit --amend 增补提交. 会使用与当前提交节点相同的父节点进行一次新的提交,旧的提交将会被取消.</span><br></pre></td></tr></table></figure>
-<p>使用<code>git commit -m &#39;第一次提交&#39;</code>提交,得</p>
+<p> 使用<code>git commit -m &#39;第一次提交&#39;</code>提交,得提示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[master (root-commit) 728a3eb] 第一次提交</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 test1.txt</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-</li>
-<li><ol start="6">
 <li><p>使用<code>git push</code>命令吧提交的内容推送到远端</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git push # push所有分支</span><br><span class="line">git push origin master # 将本地主分支推到远程主分支</span><br><span class="line">git push -u origin master # 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)</span><br><span class="line">git push origin &lt;local_branch&gt; # 创建远程分支， origin是远程仓库名</span><br><span class="line">git push origin &lt;local_branch&gt;:&lt;remote_branch&gt; # 创建远程分支</span><br><span class="line">git push origin :&lt;remote_branch&gt; #先删除本地分支(git br -d &lt;branch&gt;)，然后再push删除远程分支</span><br></pre></td></tr></table></figure>
-<p>使用<code>git push origin master</code>命令，得</p>
+<p> 使用<code>git push origin master</code>命令，得提示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 test1.txt</span><br><span class="line">PhoenixdeMacBook-Air:test phoenix$ git push origin master</span><br><span class="line">Counting objects: 3, done.</span><br><span class="line">Writing objects: 100% (3/3), 241 bytes | 120.00 KiB/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">remote: </span><br><span class="line">remote: Create a pull request for &apos;master&apos; on GitHub by visiting:</span><br><span class="line">remote:      https://github.com/frPhoenix/test/pull/new/master</span><br><span class="line">remote: </span><br><span class="line">To https://github.com/frPhoenix/test.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br></pre></td></tr></table></figure>
-<p>现在去刷新你的远端仓库就可以看到 test1.txt 文件了</p>
+<p>  现在去刷新你的远端仓库就可以看到 test1.txt 文件了</p>
 </li>
 </ol>
+<h1 id="创建分支切换分支"><a href="#创建分支切换分支" class="headerlink" title="创建分支切换分支"></a>创建分支切换分支</h1><ol>
+<li>使用<code>git branch</code>创建分支<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch &lt;new_branch&gt; # 创建新的分支</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>我这里创建一个<code>test1</code>分支，<code>git branch test1</code></p>
+<ol start="2">
+<li>查看分支使用<code>git branch</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>此时得到分支信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  test1</span><br></pre></td></tr></table></figure></p>
+<p>其中master是自动创建的主分支，test1是刚才新创建的。<code>*</code>号在哪个分支前面代表此时在那个分支上。</p>
+<ol start="3">
+<li>使用<code>git checkout</code>切换分支<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;branch_name&gt; # 切换分支</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>切换到<code>test1</code>分支使用<code>git checkout test1</code>，然后在使用<code>git branch</code>查看分支情况，得：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">  master</span><br><span class="line">* test1</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li><p>创建新分支并切换到新分支，使用<code>git checkout -b &lt;branch_name&gt;</code>,如创建并切换到test2分支，<code>git checkout -b test2</code><br>使用<code>git branch</code>查看分支情况，得：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">  master</span><br><span class="line">  test1</span><br><span class="line">* test2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看远程分支使用，<code>git branch -r</code>，得：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -r</span><br><span class="line">  origin/master</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>因为没有向远端创建过别的分支，所以远端还只有<code>master</code>分支</p>
+<h1 id="操作远端分支"><a href="#操作远端分支" class="headerlink" title="操作远端分支"></a>操作远端分支</h1><pre><code>将分支切换到test1
+</code></pre><ol>
+<li>修改文件<code>test1.txt</code>的内容，添加<code>这是添加到test1分支的内容</code></li>
+<li>使用<code>git status</code>查看得到：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">On branch test1</span><br><span class="line">Changes not staged for commit:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line"></span><br><span class="line">	modified:   test1.txt</span><br><span class="line"></span><br><span class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其中，<code>git checkout -- &lt;file&gt;</code> 是丢弃本次修改的命令，如果执行该命令你会发现刚才添加的内容没有了</p>
+<ol start="3">
+<li>添加好<code>这是添加到test1分支的内容</code>内容后使用<code>git add</code>,<code>git commit</code>命令提交修改，然后是一个知识点：</li>
+</ol>
+<ul>
+<li>如果直接使用<code>git push</code>命令（不再该命令后添加任何内容），不会上传成功，会得到提示：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fatal: The current branch test1 has no upstream branch.</span><br><span class="line">To push the current branch and set the remote as upstream, use</span><br><span class="line"></span><br><span class="line">    git push --set-upstream origin test1</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<p>因为远端还没有 test1 分支，所以直接上传会出错。此时应该使用另外一个命令</p>
+<ul>
+<li>使用<code>git push origin test1</code>命令，会先在远端创建test1分支然后再上传，上传成功后的提示信息中有这样的信息：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">To https://github.com/frPhoenix/test.git</span><br><span class="line"> * [new branch]      test1 -&gt; test1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>第一行是上传的仓库地址，第二行是本地的哪个分支推送到了远端的哪个分支。</p>
+<ol start="3">
+<li>直接使用<code>git push</code>是将本地的分支上传到远程的同名分支，也就是远端先创建有一个test1分支，然后使用<code>git push</code>将本地test1分支推送到远端test1分支</li>
+</ol>
+<h1 id="比较两个分支git-diff"><a href="#比较两个分支git-diff" class="headerlink" title="比较两个分支git diff"></a>比较两个分支<code>git diff</code></h1><ol>
+<li>查看两个分支已经提交的内容的不同<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;branchA&gt; ... &lt;branchB&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>我们这里使用<code>git diff master ... test1</code>，得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">--- a/test1.txt</span><br><span class="line">+++ b/test1.txt</span><br><span class="line">@@@@@ -1,5 -1,5 -1,5 -1,5 +1,3 @@@@@</span><br><span class="line">    第一次提交</span><br><span class="line">    </span><br><span class="line">----这是添加到test1分支的内容</span><br><span class="line">----</span><br><span class="line">----使用push，test1分支的内容</span><br><span class="line">++++使用push，master分支的内容</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>查看工作区的内容与分支有什么不同,使用<code>git diff HEAD</code></li>
+</ol>
+<h1 id="查看提交、撤销提交"><a href="#查看提交、撤销提交" class="headerlink" title="查看提交、撤销提交"></a>查看提交、撤销提交</h1><ol>
+<li>查看提交情况使用<code>git log</code>命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git log &lt;file&gt; # 查看该文件每次提交记录</span><br><span class="line">git log -p &lt;file&gt; # 查看每次详细修改内容的diff</span><br><span class="line">git log -p -2 # 查看最近两次详细修改内容的diff</span><br><span class="line">git log --oneline --graph:可以图形化地表示出分支合并历史.</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>使用<code>git log --oneline --graph</code>能够得到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 2a21b2b (HEAD -&gt; test1) 使用push推送</span><br><span class="line">* 243db38 推动到master、test1分支</span><br><span class="line">* 8141a38 推到test1分支</span><br><span class="line">* 728a3eb (test2) 第一次提交</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>使用<code>git revert</code>撤回提交<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git revert HEAD: 撤销最近的一个提交.</span><br><span class="line">git revert会创建一个反向的新提交,可以通过参数-n来告诉Git先不要提交.</span><br><span class="line">git revert &lt;$id&gt; # 恢复某次提交的状态，恢复动作本身也创建次提交对象</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其中<code>&lt;$id&gt;</code>指的是提交的版本编号，如上面得到的<code>2a21b2b</code>。</p>
+<h1 id="操作stash-缓存"><a href="#操作stash-缓存" class="headerlink" title="操作stash 缓存"></a>操作stash 缓存</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git stash将会把当前目录和index中的所有改动(但不包括未track的文件)压入一个栈,然后留给你一个clean的工作状态,即处于上一次最新提交处.</span><br><span class="line">git stash list会显示这个栈的list.</span><br><span class="line">git stash apply:取出stash中的上一个项目(stash@&#123;0&#125;),并且应用于当前的工作目录.</span><br><span class="line">    也可以指定别的项目,比如git stash apply stash@&#123;1&#125;.</span><br><span class="line">	如果你在应用stash中项目的同时想要删除它,可以用git stash pop</span><br><span class="line"> </span><br><span class="line">    删除stash中的项目:</span><br><span class="line">git stash drop: 删除上一个,也可指定参数删除指定的一个项目.</span><br><span class="line">git stash clear: 删除所有项目.</span><br></pre></td></tr></table></figure>
+<h1 id="合并分支内容"><a href="#合并分支内容" class="headerlink" title="合并分支内容"></a>合并分支内容</h1><h3 id="将master分支上的内容合并到test1分支上"><a href="#将master分支上的内容合并到test1分支上" class="headerlink" title="将master分支上的内容合并到test1分支上"></a>将master分支上的内容合并到test1分支上</h3><ol>
+<li>使用 <code>git fetch origin &lt;branch&gt;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master:tmp</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>//在本地新建一个temp分支，并将远程origin仓库的master分支代码下载到本地temp分支<br>    再使用merge，<code>git merge tmp</code>合并分支，这时可能会有冲突，（删除tmp分支：<code>git branch -d temp</code>)</p>
+<p>撤销合并：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li><p>使用 <code>git pull origin &lt;branch&gt;</code><br>从远端拉取内容并合并，合并完成之后需要一次新的提交。 </p>
+</li>
+<li><p>使用 <code>git rebase</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rebase &lt;branch&gt;</span><br><span class="line">git rebase --continue</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="查看分支之间的关系图"><a href="#查看分支之间的关系图" class="headerlink" title="查看分支之间的关系图"></a>查看分支之间的关系图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --graph --decorate --oneline --simplify-by-decoration --all</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<p>–decorate 标记会让git log显示每个commit的引用(如:分支、tag等) </p>
+<p>–oneline 一行显示<br>–simplify-by-decoration 只显示被branch或tag引用的commit</p>
+<p>–all 表示显示所有的branch，这里也可以选择，比如我指向显示分支ABC的关系，则将–all替换为branchA branchB branchC</p>
 
           
         
@@ -1605,7 +1664,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
