@@ -229,6 +229,321 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/11/Git小白入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/11/Git小白入门/" itemprop="url">Git小白入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-11T17:36:59+08:00">
+                2018-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-在GitHub上创建一个仓库"><a href="#1-在GitHub上创建一个仓库" class="headerlink" title="1. 在GitHub上创建一个仓库"></a>1. 在GitHub上创建一个仓库</h1><ul>
+<li><ol>
+<li>先注册一个GitHub账号，官网：<code>https://github.com</code>，或者在码云（<code>https://gitee.com</code>）、Coding（<code>https://coding.net</code>）上注册页可以</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>新建项目（创建仓库），创建完成后会得到仓库地址，我的项目名是<code>test</code>。如：<code>https://github.com/你的用户名/test.git</code></li>
+</ol>
+</li>
+</ul>
+<h1 id="2-将新建的仓库克隆到本地"><a href="#2-将新建的仓库克隆到本地" class="headerlink" title="2. 将新建的仓库克隆到本地"></a>2. 将新建的仓库克隆到本地</h1><ul>
+<li><ol>
+<li><p>打开终端并切换到指定目录（你想将项目放在哪个目录下）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$: cd Web/Git/</span><br></pre></td></tr></table></figure>
+<p>通过<code>pwd</code>命令查看路径为：<code>/Users/phoenix/Web/Git</code><br>注：我的是 MAC 环境</p>
+</li>
+</ol>
+</li>
+<li><ol start="2">
+<li><p>克隆项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$: git clone https://github.com/你的用户名/test.git</span><br></pre></td></tr></table></figure>
+<p>克隆完成后在我的 Git 文件夹下多了一个 test 文件夹。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h1 id="提交修改到-master-分支"><a href="#提交修改到-master-分支" class="headerlink" title="提交修改到 master 分支"></a>提交修改到 <code>master</code> 分支</h1><pre><code>初健项目时就有一个master分支（一般为主分支），且只有一个master分支
+</code></pre><ul>
+<li><ol>
+<li>在test文件夹（项目文件夹）下新建一个 <code>test1.txt</code> 文件，里面填写内容‘第一次提交’</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>使用 <code>git status</code> 命令可以看到工作目录和暂存区的状态<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line"></span><br><span class="line">	test1.txt</span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol start="3">
+<li><p>要将新添加的文件（或新修改的内容）提交到远端仓库，就要用<code>git add</code>命令将要提交的内容添加到暂存区（staging area）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add test1.txt # git add 文件名 ，是将指定文件添加进暂存区</span><br><span class="line">git add . # 是将所有改动的内容（或新增文件）添加进暂存区</span><br></pre></td></tr></table></figure>
+<p>将<code>test1.txt</code>文件添加到暂存区后在使用<code>git status</code>命令查看状态，得：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span><br><span class="line"></span><br><span class="line">	new file:   test1.txt</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol start="4">
+<li><p>使用<code>git rm</code>命令可以将暂存区里的内容移除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm -f &lt;file&gt;: 强制从staging区移除文件,同时也移除出工作目录.</span><br><span class="line">   git rm --cachedf &lt;file&gt;: 从staging区移除文件,但留在工作目录中.</span><br></pre></td></tr></table></figure>
+<p>运行命令<code>git rm --cached test1.txt</code>后在运行命令<code>git status</code>, 得</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line"></span><br><span class="line">	test1.txt</span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
+<p>说明：<code>git rm --cached &lt;file&gt;</code>从staging区移除文件,但留在工作目录中</p>
+<p>如果运行<code>git rm -f test1.txt</code>, 那么项目文件夹下也没有 test1.txt 文件了，因为<code>git rm -f &lt;file&gt;</code> 强制从staging区移除文件,同时也移除出工作目录.</p>
+</li>
+</ol>
+</li>
+<li><ol start="5">
+<li><p>重新来一次，将文件添加到暂存区后不移除。使用<code>git commit</code>提交已经被add进来的改动.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git commit -m “the commit message&quot;</span><br><span class="line">   git commit -a 会先把所有已经track的文件的改动add进来,然后提交(有点像svn的一次提交,不用先暂存). 对于没有track的文件,还是需要git add一下.</span><br><span class="line">   git commit --amend 增补提交. 会使用与当前提交节点相同的父节点进行一次新的提交,旧的提交将会被取消.</span><br></pre></td></tr></table></figure>
+<p>使用<code>git commit -m &#39;第一次提交&#39;</code>提交,得</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[master (root-commit) 728a3eb] 第一次提交</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 test1.txt</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol start="6">
+<li><p>使用<code>git push</code>命令吧提交的内容推送到远端</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git push # push所有分支</span><br><span class="line">git push origin master # 将本地主分支推到远程主分支</span><br><span class="line">git push -u origin master # 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)</span><br><span class="line">git push origin &lt;local_branch&gt; # 创建远程分支， origin是远程仓库名</span><br><span class="line">git push origin &lt;local_branch&gt;:&lt;remote_branch&gt; # 创建远程分支</span><br><span class="line">git push origin :&lt;remote_branch&gt; #先删除本地分支(git br -d &lt;branch&gt;)，然后再push删除远程分支</span><br></pre></td></tr></table></figure>
+<p>使用<code>git push origin master</code>命令，得</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 test1.txt</span><br><span class="line">PhoenixdeMacBook-Air:test phoenix$ git push origin master</span><br><span class="line">Counting objects: 3, done.</span><br><span class="line">Writing objects: 100% (3/3), 241 bytes | 120.00 KiB/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">remote: </span><br><span class="line">remote: Create a pull request for &apos;master&apos; on GitHub by visiting:</span><br><span class="line">remote:      https://github.com/frPhoenix/test/pull/new/master</span><br><span class="line">remote: </span><br><span class="line">To https://github.com/frPhoenix/test.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br></pre></td></tr></table></figure>
+<p>现在去刷新你的远端仓库就可以看到 test1.txt 文件了</p>
+</li>
+</ol>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/08/使用arguments对象写阶层函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/08/使用arguments对象写阶层函数/" itemprop="url">使用arguments对象写阶层函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-08T21:50:28+08:00">
+                2018-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在函数内部有两个特殊的对象：arguments和this。其中arguments对象包含着传入函数中的所有参数，还有一个名叫callee的属性，该属性是一个指针，指向拥有这个arguments对象的函数。</p>
+<h3 id="常规方法"><a href="#常规方法" class="headerlink" title="常规方法"></a>常规方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function factorial (num) &#123;</span><br><span class="line">	if (num &lt;= 1) &#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		return num * factorial(num - 1);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用arguments对象的callee属性"><a href="#使用arguments对象的callee属性" class="headerlink" title="使用arguments对象的callee属性"></a>使用arguments对象的callee属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function factorial (num) &#123;</span><br><span class="line">	if (num &lt;= 1) &#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		return num * arguments.callee(num - 1);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>详见：js高级程序设计（第三版）113页</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/05/laravel处理404问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1223,296 +1538,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/09/30/移动端自动设置字体大小/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/30/移动端自动设置字体大小/" itemprop="url">移动端自动设置字体大小</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T11:25:55+08:00">
-                2018-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>来自：<a href="https://segmentfault.com/a/1190000004189237" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004189237</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line">!function(win, lib) &#123;</span><br><span class="line">    var timer,</span><br><span class="line">        doc     = win.document,</span><br><span class="line">        docElem = doc.documentElement,</span><br><span class="line"></span><br><span class="line">        vpMeta   = doc.querySelector(&apos;meta[name=&quot;viewport&quot;]&apos;),</span><br><span class="line">        flexMeta = doc.querySelector(&apos;meta[name=&quot;flexible&quot;]&apos;),</span><br><span class="line"> </span><br><span class="line">        dpr   = 0,</span><br><span class="line">        scale = 0,</span><br><span class="line"> </span><br><span class="line">        flexible = lib.flexible || (lib.flexible = &#123;&#125;);</span><br><span class="line"> 	</span><br><span class="line">	console.log(vpMeta, flexMeta)</span><br><span class="line">    // 设置了 viewport meta</span><br><span class="line">    if (vpMeta) &#123;</span><br><span class="line">        console.warn(&quot;将根据已有的meta标签来设置缩放比例&quot;);</span><br><span class="line">        var initial = vpMeta.getAttribute(&quot;content&quot;).match(/initial\-scale=([\d\.]+)/);</span><br><span class="line"> </span><br><span class="line">        if (initial) &#123;</span><br><span class="line">            scale = parseFloat(initial[1]); // 已设置的 initialScale</span><br><span class="line">            dpr = parseInt(1 / scale);      // 设备像素比 devicePixelRatio</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">    // 设置了 flexible Meta</span><br><span class="line">    else if (flexMeta) &#123;</span><br><span class="line">        var flexMetaContent = flexMeta.getAttribute(&quot;content&quot;);</span><br><span class="line">        if (flexMetaContent) &#123;</span><br><span class="line"> </span><br><span class="line">            var initial = flexMetaContent.match(/initial\-dpr=([\d\.]+)/),</span><br><span class="line">                maximum = flexMetaContent.match(/maximum\-dpr=([\d\.]+)/);</span><br><span class="line"> </span><br><span class="line">            if (initial) &#123;</span><br><span class="line">                dpr = parseFloat(initial[1]);</span><br><span class="line">                scale = parseFloat((1 / dpr).toFixed(2));</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line">            if (maximum) &#123;</span><br><span class="line">                dpr = parseFloat(maximum[1]);</span><br><span class="line">                scale = parseFloat((1 / dpr).toFixed(2));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // viewport 或 flexible</span><br><span class="line">    // meta 均未设置</span><br><span class="line">    if (!dpr &amp;&amp; !scale) &#123;</span><br><span class="line">        // QST</span><br><span class="line">        // 这里的 第一句有什么用 ?</span><br><span class="line">        // 和 Android 有毛关系 ?</span><br><span class="line">        var u = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi)),</span><br><span class="line">            _dpr = win.devicePixelRatio;</span><br><span class="line"> </span><br><span class="line">        // 所以这里似乎是将所有 Android 设备都设置为 1 了</span><br><span class="line">        dpr = u ? ( (_dpr &gt;= 3 &amp;&amp; (!dpr || dpr &gt;= 3))</span><br><span class="line">                        ? 3</span><br><span class="line">                        : (_dpr &gt;= 2 &amp;&amp; (!dpr || dpr &gt;= 2))</span><br><span class="line">                            ? 2</span><br><span class="line">                            : 1</span><br><span class="line">                  )</span><br><span class="line">                : 1;</span><br><span class="line"> </span><br><span class="line">        scale = 1 / dpr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	docElem.setAttribute(&quot;data-dpr&quot;, dpr);</span><br><span class="line"></span><br><span class="line">    // 插入 viewport meta</span><br><span class="line">    if (!vpMeta) &#123;</span><br><span class="line">        vpMeta = doc.createElement(&quot;meta&quot;);</span><br><span class="line">         </span><br><span class="line">        vpMeta.setAttribute(&quot;name&quot;, &quot;viewport&quot;);</span><br><span class="line">        vpMeta.setAttribute(&quot;content&quot;,</span><br><span class="line">            &quot;initial-scale=&quot; + scale + &quot;, maximum-scale=&quot; + scale + &quot;, minimum-scale=&quot; + scale + &quot;, user-scalable=no&quot;);</span><br><span class="line"> </span><br><span class="line">        if (docElem.firstElementChild) &#123;</span><br><span class="line">            docElem.firstElementChild.appendChild(vpMeta)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            var div = doc.createElement(&quot;div&quot;);</span><br><span class="line">            div.appendChild(vpMeta);</span><br><span class="line">            doc.write(div.innerHTML);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function setFontSize() &#123;</span><br><span class="line">        var winWidth = docElem.getBoundingClientRect().width;</span><br><span class="line"> </span><br><span class="line">        if (winWidth / dpr &gt; 540) &#123;</span><br><span class="line">            (winWidth = 540 * dpr);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        // 根节点 fontSize 根据宽度决定</span><br><span class="line">        var baseSize = winWidth / 10;</span><br><span class="line"> </span><br><span class="line">        docElem.style.fontSize = baseSize + &quot;px&quot;;</span><br><span class="line">        flexible.rem = win.rem = baseSize;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    // 调整窗口时重置</span><br><span class="line">    win.addEventListener(&quot;resize&quot;, function() &#123;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        timer = setTimeout(setFontSize, 300);</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">    // 这一段是我自己加的</span><br><span class="line">    // orientationchange（设备的纵横方向改变）时也需要重算下吧</span><br><span class="line">    win.addEventListener(&quot;orientationchange&quot;, function() &#123;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        timer = setTimeout(setFontSize, 300);</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // pageshow</span><br><span class="line">    // keyword: 倒退 缓存相关</span><br><span class="line">    win.addEventListener(&quot;pageshow&quot;, function(e) &#123;</span><br><span class="line">        if (e.persisted) &#123;</span><br><span class="line">            clearTimeout(timer);</span><br><span class="line">            timer = setTimeout(setFontSize, 300);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line">    // 设置基准字体</span><br><span class="line">    if (&quot;complete&quot; === doc.readyState) &#123;</span><br><span class="line">        doc.body.style.fontSize = 12 * dpr + &quot;px&quot;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        doc.addEventListener(&quot;DOMContentLoaded&quot;, function() &#123;</span><br><span class="line">            doc.body.style.fontSize = 12 * dpr + &quot;px&quot;;</span><br><span class="line">        &#125;, false);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	setFontSize();</span><br><span class="line"></span><br><span class="line">	flexible.dpr = win.dpr = dpr;</span><br><span class="line"></span><br><span class="line">	flexible.refreshRem = setFontSize;</span><br><span class="line"></span><br><span class="line">    flexible.rem2px = function(d) &#123;</span><br><span class="line">        var c = parseFloat(d) * this.rem;</span><br><span class="line">        if (&quot;string&quot; == typeof d &amp;&amp; d.match(/rem$/)) &#123;</span><br><span class="line">            c += &quot;px&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return c;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    flexible.px2rem = function(d) &#123;</span><br><span class="line">        var c = parseFloat(d) / this.rem;</span><br><span class="line">         </span><br><span class="line">        if (&quot;string&quot; == typeof d &amp;&amp; d.match(/px$/)) &#123;</span><br><span class="line">            c += &quot;rem&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(window, window.lib || (window.lib = &#123;&#125;));</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/09/30/layuiZoomTable/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/30/layuiZoomTable/" itemprop="url">layUI速查表</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T09:39:28+08:00">
-                2018-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="常用class"><a href="#常用class" class="headerlink" title="常用class"></a>常用class</h1><table>
-<thead>
-<tr>
-<th style="text-align:left">class名</th>
-<th style="text-align:left">作用</th>
-<th style="text-align:left">注释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">layui-container</td>
-<td style="text-align:left">内容</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">layui-fluid</td>
-<td style="text-align:left">内容</td>
-<td style="text-align:left">宽度将不会固定，而是 100% 适应</td>
-</tr>
-<tr>
-<td style="text-align:left">layui-row</td>
-<td style="text-align:left">行</td>
-<td style="text-align:left">栅格系统的行，共12列</td>
-</tr>
-<tr>
-<td style="text-align:left">layui-col-xs*</td>
-<td style="text-align:left">列</td>
-<td style="text-align:left">超小屏（手机&lt;768px）</td>
-</tr>
-<tr>
-<td style="text-align:left">layui-col-sm*</td>
-<td style="text-align:left">列</td>
-<td style="text-align:left">小屏幕(平板≥768px）</td>
-</tr>
-<tr>
-<td style="text-align:left">layui-col-md*</td>
-<td style="text-align:left">列</td>
-<td style="text-align:left">中等屏幕(桌面≥992px)</td>
-</tr>
-<tr>
-<td style="text-align:left">layui-col-lg*</td>
-<td style="text-align:left">列</td>
-<td style="text-align:left">大型屏幕(桌面≥1200px)</td>
-</tr>
-<tr>
-<td style="text-align:left">layui-col-space1</td>
-<td style="text-align:left">列之间间隔 1px</td>
-<td style="text-align:left">另外还有值为：3、5、8、10、12、15、18、20、22、28、30</td>
-</tr>
-</tbody>
-</table>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1567,7 +1592,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
