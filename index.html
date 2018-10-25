@@ -229,6 +229,645 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/25/获取浏览器可视区宽高/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/获取浏览器可视区宽高/" itemprop="url">获取浏览器可视区宽高</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-25T15:36:58+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>参考：<a href="https://www.cnblogs.com/pengchengzhong/p/6050644.html" target="_blank" rel="noopener">https://www.cnblogs.com/pengchengzhong/p/6050644.html</a><br>获取浏览器可视区宽高要考虑兼容情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function getViewXY () &#123;</span><br><span class="line">	let w = window,</span><br><span class="line">    d = document,</span><br><span class="line">    e = d.documentElement,</span><br><span class="line">    g = d.getElementsByTagName(&apos;body&apos;)[0],</span><br><span class="line">    x = w.innerWidth || e.clientWidth || g.clientWidth,</span><br><span class="line">    y = w.innerHeight|| e.clientHeight|| g.clientHeight;</span><br><span class="line">    return &#123;width: x, height: y&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/25/test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/test/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-25T11:22:27+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            var EventUtil = {
+	addHandler: function (element, type, handler) {
+		if (element.addEventListener) {
+			element.addEventListener(type, handler, false);
+		} else if (element.attachEvent) {
+			element.attachEvent('on' + type, handler);
+		} else {
+			element['on' + type] = handler;
+		}
+	},
+	removeHandler: function (element, type, handler) {
+		if (element.removeEventListener) {
+			element.removeEventListener(type, handler, false);
+		} else if (element.detachEvent) {
+			element.detachEvent('on' + type, handler);
+		} else {
+			element['on' + type] = null;
+		}
+	},
+	getEvent: function (event) {
+		return event ? event: window.event;
+	},
+	getTarget: function (event) {
+		return event.target || event.srcElement;
+	},
+	preventDefault: function (event) {
+		if (event.preventDefault) {
+			event.preventDefault();
+		} else {
+			event.returnValue = false;
+		}
+	}
+}
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/25/跨浏览器DOM事件方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/跨浏览器DOM事件方法/" itemprop="url">跨浏览器DOM事件方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-25T11:20:40+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var EventUtil = &#123;</span><br><span class="line">	addHandler: function () &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/23/vue-cli3取消eslint/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/23/vue-cli3取消eslint/" itemprop="url">vue-cli3取消eslint</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T11:54:18+08:00">
+                2018-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>刚开始初始化项目时我们添加了eslint，但是后面项目里要整合别人的代码，那不规范的写法实在让人抓狂，由于工程量太大自己也没法对代码格式进行，所以只能取消eslint了</p>
+<h4 id="vue-cli2"><a href="#vue-cli2" class="headerlink" title="vue-cli2"></a>vue-cli2</h4><p>在vue-cli2中有一个配置项(在config/index.js里)，直接将<code>useEslint: true</code>改为<code>useEslint: false</code>就可以了。</p>
+<h4 id="vue-cli3"><a href="#vue-cli3" class="headerlink" title="vue-cli3"></a>vue-cli3</h4><p>在vue-cli3中没有这个配置，但可以用以下方法。</p>
+<p>选择生成的时候，有一个询问是否把插件配置文件写在package.json文件里还是单独的文件，这里我选择了写在package.json文件里<br>打开package.json文件有这么一段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&quot;eslintConfig&quot;: &#123;</span><br><span class="line">    &quot;root&quot;: true,</span><br><span class="line">    &quot;env&quot;: &#123;</span><br><span class="line">      &quot;node&quot;: true</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;extends&quot;: [</span><br><span class="line">      &quot;plugin:vue/essential&quot;,</span><br><span class="line">	  &quot;@vue/standard&quot; // 这行是选用的eslint规则配置，你的可能和我的不一样，删除即可，别忘了还有上面的‘，’</span><br><span class="line">    ],</span><br><span class="line">    &quot;rules&quot;: &#123;&#125;,</span><br><span class="line">    &quot;parserOptions&quot;: &#123;</span><br><span class="line">      &quot;parser&quot;: &quot;babel-eslint&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/15/js定义常量/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/15/js定义常量/" itemprop="url">js定义常量</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-15T15:31:47+08:00">
+                2018-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h1><p>js中声明变量的方法是使用关键字 <code>var</code>，该方式不区分数据类型，也不区分常量和变量。在es6中声明变量使用关键字 <code>let</code> 和 <code>const</code>(var 依然可以使用)，其中 <code>let</code> 用来声明变量，<code>const</code> 用来声明常量。</p>
+<ul>
+<li><code>const</code> 声明的常量（如：<code>const a = 1</code>)的值是不能改变的。（<code>a = 2;</code> 报错)</li>
+<li>但是 <code>const</code> 声明的对象的属性是可以改变的（如：<code>const obj = {a: 1}; obj.a = 2</code>)。但不能直接对声明的常量赋值。(<code>obj = {b: 2};</code> 报错)</li>
+</ul>
+<h1 id="使对象的属性值不能改变"><a href="#使对象的属性值不能改变" class="headerlink" title="使对象的属性值不能改变"></a>使对象的属性值不能改变</h1><p>使用 <code>Object.freeze()</code> 方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">  foo: &apos;bar&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.freeze(obj)</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/11/Git小白入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -963,640 +1602,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/04/Lumen-laravel添加全局自定义函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/04/Lumen-laravel添加全局自定义函数/" itemprop="url">Lumen/laravel添加全局自定义函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T10:52:22+08:00">
-                2018-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="创建自定义文件"><a href="#创建自定义文件" class="headerlink" title="创建自定义文件"></a>创建自定义文件</h4><ul>
-<li>在任意文件夹下新建一个 functions.php 文件</li>
-<li>如：”app/Common/Functions/functions.php”</li>
-</ul>
-<h4 id="配置自动加载"><a href="#配置自动加载" class="headerlink" title="配置自动加载"></a>配置自动加载</h4><ul>
-<li>在 composer.json 文件中添加配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;autoload&quot;: &#123;</span><br><span class="line">        &quot;files&quot;: [</span><br><span class="line">            &quot;app/Common/Functions/functions.php&quot;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="重新加载配置"><a href="#重新加载配置" class="headerlink" title="重新加载配置"></a>重新加载配置</h4><ul>
-<li>运行命令：$ composer dump-auto</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/04/Lumen-laravel使用UUID/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/04/Lumen-laravel使用UUID/" itemprop="url">Lumen/laravel使用UUID</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T10:51:54+08:00">
-                2018-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="安装Uuid"><a href="#安装Uuid" class="headerlink" title="安装Uuid"></a>安装Uuid</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require webpatser/laravel-uuid</span><br></pre></td></tr></table></figure>
-<h3 id="配置全局函数使用-UUID"><a href="#配置全局函数使用-UUID" class="headerlink" title="配置全局函数使用 UUID"></a>配置全局函数使用 UUID</h3><ul>
-<li>配置全局函数得方法参照另外一篇 《添加全局自定义函数》</li>
-<li>在全局函数文件中添加如下代码</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">use Webpatser\Uuid\Uuid;</span><br><span class="line">/**</span><br><span class="line"> * 生成 uuid  &quot;de99ff30-6d4c-11e8-b243-27600b662ccc&quot;</span><br><span class="line"> * @return string</span><br><span class="line"> */</span><br><span class="line">function uuid() &#123;</span><br><span class="line">    return Uuid::generate()-&gt;string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/02/编程艺术中的优质代码片段/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/02/编程艺术中的优质代码片段/" itemprop="url">编程艺术中的优质代码片段</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T10:21:54+08:00">
-                2018-10-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="获取-XMLHttpRequest-对象-（兼容处理）"><a href="#获取-XMLHttpRequest-对象-（兼容处理）" class="headerlink" title="获取 XMLHttpRequest 对象 （兼容处理）"></a>获取 XMLHttpRequest 对象 （兼容处理）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function getHTTPObject () &#123;</span><br><span class="line">	if (typeof XMLHttpRequest == &apos;undefined&apos;)</span><br><span class="line">		XMLHttpRequest = function () &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				return new ActiveXObject(&apos;Msxml2.XMLHTTP.6.0&apos;);</span><br><span class="line">			&#125; catch (e) &#123;&#125;</span><br><span class="line">			try &#123;</span><br><span class="line">				return new ActiveXObject(&apos;Msxml2.XMLHTTP.3.0&apos;);</span><br><span class="line">			&#125; catch (e) &#123;&#125;</span><br><span class="line">			try &#123;</span><br><span class="line">				return new ActiveXObject(&apos;Msxml2.XMLHTTP&apos;);</span><br><span class="line">			&#125; catch (e) &#123;&#125;</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">	return new XMLHttpRequest();</span><br><span class="line">&#125;</span><br><span class="line">// 获取</span><br><span class="line">let request = getHTTPRequest();</span><br></pre></td></tr></table></figure>
-<h2 id="获取下一个元素节点"><a href="#获取下一个元素节点" class="headerlink" title="获取下一个元素节点"></a>获取下一个元素节点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function getNextElement (node) &#123;</span><br><span class="line">	if (node.nodeType == 1) &#123;</span><br><span class="line">		return node;</span><br><span class="line">	&#125;</span><br><span class="line">	if (node.nextSibling) &#123;</span><br><span class="line">		return getNextElement(node.nextSibling);</span><br><span class="line">	&#125;</span><br><span class="line">	return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="追加-className"><a href="#追加-className" class="headerlink" title="追加 className"></a>追加 className</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function addClass (element, value) &#123;</span><br><span class="line">	if (!element.className)&#123;</span><br><span class="line">		element.className = value;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		var newClassName = element.className;</span><br><span class="line">		newClassName += &apos; &apos;;</span><br><span class="line">		newClassName += value;</span><br><span class="line">		element.className = newClassName;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/01/DOM相关基础/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/01/DOM相关基础/" itemprop="url">DOM Core 与 HTML-DOM 的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-01T22:15:30+08:00">
-                2018-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>DOM Core 与 HTML-DOM 都是为操作元素或元素属性。只是 DOM Core 是通过相关方法来实现，HTML-DOM 是通过操作对象属性实现。<br>例如：</p>
-<ol>
-<li><p>HTML-DOM提供了一个 forms 对象，这个对象可以把下面的语句：</p>
- <figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">简化为</span><br><span class="line">``` document.forms</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>HTML-DOM为图片提供 src 属性可以把下面的语句：</p>
- <figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">简化为</span><br><span class="line">``` element.src</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>HTML-DOM为链接提供 href 属性可以把下面的语句：</p>
- <figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">简化为</span><br><span class="line">``` element.href</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/09/30/handleImg/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/30/handleImg/" itemprop="url">img 标签的相关操作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T15:01:01+08:00">
-                2018-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="等比缩放"><a href="#等比缩放" class="headerlink" title="等比缩放"></a>等比缩放</h3><pre><code>只设置 img 标签的宽度，不设置高度
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.logo &gt; img &#123;</span><br><span class="line">	width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="禁用对图片的操作"><a href="#禁用对图片的操作" class="headerlink" title="禁用对图片的操作"></a>禁用对图片的操作</h3><ol>
-<li><code>ondragstart=&quot;return false;&quot;</code> // 禁止拖拽图片</li>
-<li><code>oncontextmenu=&quot;return false;&quot;</code> // 禁止鼠标右键</li>
-<li><code>ondragstart=&quot;return false;&quot;</code> // 禁止鼠标拖动</li>
-<li><code>onselectstart=&quot;return false;&quot;</code> // 文字禁止鼠标选中</li>
-<li><code>onselect=&quot;document.selection.empty();&quot;</code> // 禁止复制文本<br>使用方法如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;../images/logo.png&quot; ondragstart=&quot;return false;&quot;&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1651,7 +1656,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1664,7 +1669,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
