@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="vue vue-cli3 eslint," />
+  <meta name="keywords" content="vue 问题," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="刚开始初始化项目时我们添加了eslint，但是后面项目里要整合别人的代码，那不规范的写法实在让人抓狂，由于工程量太大自己也没法对代码格式进行，所以只能取消eslint了 vue-cli2在vue-cli2中有一个配置项(在config/index.js里)，直接将useEslint: true改为useEslint: false就可以了。 vue-cli3在vue-cli3中没有这个配置，但可以用">
-<meta name="keywords" content="vue vue-cli3 eslint">
+<meta name="description" content="eslint 问题：报错：1The keyword &amp;apos;import&amp;apos; is reserved   背景：使用iview-admin精简版打开eslint后就在下面代码处报import错，在main.js里引用vue哪里的import确没有报错。而且使用vue-cli3安装的项目（初始化时选择了eslint）里确不会出现这个问题。12345meta: &amp;#123;      ti">
+<meta name="keywords" content="vue 问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue-cli3取消eslint">
-<meta property="og:url" content="https://frphoenix.github.io/2018/10/23/vue-cli3取消eslint/index.html">
+<meta property="og:title" content="使用vue遇到的问题">
+<meta property="og:url" content="https://frphoenix.github.io/2018/10/28/使用vue遇到的问题/index.html">
 <meta property="og:site_name" content="Snow的个人博客">
-<meta property="og:description" content="刚开始初始化项目时我们添加了eslint，但是后面项目里要整合别人的代码，那不规范的写法实在让人抓狂，由于工程量太大自己也没法对代码格式进行，所以只能取消eslint了 vue-cli2在vue-cli2中有一个配置项(在config/index.js里)，直接将useEslint: true改为useEslint: false就可以了。 vue-cli3在vue-cli3中没有这个配置，但可以用">
+<meta property="og:description" content="eslint 问题：报错：1The keyword &amp;apos;import&amp;apos; is reserved   背景：使用iview-admin精简版打开eslint后就在下面代码处报import错，在main.js里引用vue哪里的import确没有报错。而且使用vue-cli3安装的项目（初始化时选择了eslint）里确不会出现这个问题。12345meta: &amp;#123;      ti">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-23T04:05:51.009Z">
+<meta property="og:updated_time" content="2018-10-28T09:43:50.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue-cli3取消eslint">
-<meta name="twitter:description" content="刚开始初始化项目时我们添加了eslint，但是后面项目里要整合别人的代码，那不规范的写法实在让人抓狂，由于工程量太大自己也没法对代码格式进行，所以只能取消eslint了 vue-cli2在vue-cli2中有一个配置项(在config/index.js里)，直接将useEslint: true改为useEslint: false就可以了。 vue-cli3在vue-cli3中没有这个配置，但可以用">
+<meta name="twitter:title" content="使用vue遇到的问题">
+<meta name="twitter:description" content="eslint 问题：报错：1The keyword &amp;apos;import&amp;apos; is reserved   背景：使用iview-admin精简版打开eslint后就在下面代码处报import错，在main.js里引用vue哪里的import确没有报错。而且使用vue-cli3安装的项目（初始化时选择了eslint）里确不会出现这个问题。12345meta: &amp;#123;      ti">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://frphoenix.github.io/2018/10/23/vue-cli3取消eslint/"/>
+  <link rel="canonical" href="https://frphoenix.github.io/2018/10/28/使用vue遇到的问题/"/>
 
 
 
 
 
-  <title>vue-cli3取消eslint | Snow的个人博客</title>
+  <title>使用vue遇到的问题 | Snow的个人博客</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/23/vue-cli3取消eslint/">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/28/使用vue遇到的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Snow Liu">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue-cli3取消eslint</h1>
+          <h1 class="post-title" itemprop="name headline">使用vue遇到的问题</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T11:54:18+08:00">
-                2018-10-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-28T17:33:19+08:00">
+                2018-10-28
               </time>
             
 
@@ -300,10 +300,12 @@
       
 
       
-        <p>刚开始初始化项目时我们添加了eslint，但是后面项目里要整合别人的代码，那不规范的写法实在让人抓狂，由于工程量太大自己也没法对代码格式进行，所以只能取消eslint了</p>
-<h4 id="vue-cli2"><a href="#vue-cli2" class="headerlink" title="vue-cli2"></a>vue-cli2</h4><p>在vue-cli2中有一个配置项(在config/index.js里)，直接将<code>useEslint: true</code>改为<code>useEslint: false</code>就可以了。</p>
-<h4 id="vue-cli3"><a href="#vue-cli3" class="headerlink" title="vue-cli3"></a>vue-cli3</h4><p>在vue-cli3中没有这个配置，但可以用以下方法。</p>
-<p>选择生成的时候，有一个询问是否把插件配置文件写在package.json文件里还是单独的文件，这里我选择了写在package.json文件里<br>打开package.json文件有这么一段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&quot;eslintConfig&quot;: &#123;</span><br><span class="line">    &quot;root&quot;: true,</span><br><span class="line">    &quot;env&quot;: &#123;</span><br><span class="line">      &quot;node&quot;: true</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;extends&quot;: [</span><br><span class="line">      &quot;plugin:vue/essential&quot;,</span><br><span class="line">	  &quot;@vue/standard&quot; // 这行是选用的eslint规则配置，你的可能和我的不一样，删除即可，别忘了还有上面的‘，’</span><br><span class="line">    ],</span><br><span class="line">    &quot;rules&quot;: &#123;&#125;,</span><br><span class="line">    &quot;parserOptions&quot;: &#123;</span><br><span class="line">      &quot;parser&quot;: &quot;babel-eslint&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
+        <h1 id="eslint"><a href="#eslint" class="headerlink" title="eslint"></a>eslint</h1><ol>
+<li>问题：报错：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The keyword &apos;import&apos; is reserved</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>背景：使用iview-admin精简版打开eslint后就在下面代码处报<code>import</code>错，在<code>main.js</code>里引用vue哪里的<code>import</code>确没有报错。而且使用vue-cli3安装的项目（初始化时选择了eslint）里确不会出现这个问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">meta: &#123;</span><br><span class="line">      title: &apos;Login - 登录&apos;,</span><br><span class="line">      hideInMenu: true</span><br><span class="line">    &#125;,</span><br><span class="line">    component: () =&gt; import(/* webpackChunkName: &quot;about&quot; */ &apos;@/view/login/login.vue&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>解决方法：经过对比iview-admin精简版里的<code>eslintrc.js</code>文件和vue-cli3初始化得到的<code>eslintrc.js</code>文件得到解决方法，加上这个配置可解决问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  root: true,</span><br><span class="line">  &apos;extends&apos;: [</span><br><span class="line">    &apos;plugin:vue/essential&apos;,</span><br><span class="line">    &apos;@vue/standard&apos;</span><br><span class="line">  ],</span><br><span class="line">  rules: &#123;</span><br><span class="line">    // allow async-await</span><br><span class="line">    &apos;generator-star-spacing&apos;: &apos;off&apos;,</span><br><span class="line">    // allow debugger during development</span><br><span class="line">    &apos;no-debugger&apos;: process.env.NODE_ENV === &apos;production&apos; ? &apos;error&apos; : &apos;off&apos;,</span><br><span class="line">    &apos;vue/no-parsing-error&apos;: [2, &#123; &apos;x-invalid-end-tag&apos;: false &#125;]</span><br><span class="line">  &#125;,</span><br><span class="line">  // 加上下面这个配置可以解决问题</span><br><span class="line">  &quot;parserOptions&quot;: &#123;</span><br><span class="line">    &quot;parser&quot;: &quot;babel-eslint&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -321,7 +323,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue-vue-cli3-eslint/" rel="tag"># vue vue-cli3 eslint</a>
+            <a href="/tags/vue-问题/" rel="tag"># vue 问题</a>
           
         </div>
       
@@ -334,8 +336,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/15/js定义常量/" rel="next" title="js定义常量">
-                <i class="fa fa-chevron-left"></i> js定义常量
+              <a href="/2018/10/28/使用iview遇到的问题/" rel="next" title="使用iview遇到的问题">
+                <i class="fa fa-chevron-left"></i> 使用iview遇到的问题
               </a>
             
           </div>
@@ -343,10 +345,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/25/跨浏览器DOM事件方法/" rel="prev" title="跨浏览器DOM事件方法">
-                跨浏览器DOM事件方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -473,7 +471,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-cli2"><span class="nav-number">1.</span> <span class="nav-text">vue-cli2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-cli3"><span class="nav-number">2.</span> <span class="nav-text">vue-cli3</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#eslint"><span class="nav-number">1.</span> <span class="nav-text">eslint</span></a></li></ol></div>
             
 
           </div>
