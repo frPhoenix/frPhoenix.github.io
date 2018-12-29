@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="heatmap 热力图 Cal-Heatmap," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="github 上的 heatmap 热力图 这种热力图e-chart.js也可以做，但是功能比较单一，无法完全满足要求。这里我们使用 Cal-Heatmap 使用Cal-Heatmap 官网地址注：翻译这篇文章时是2018-11-14，在日后看这篇文章时翻译中的版本可能有改变 开始安装经典的安装方式 下载最新版本的Cal-Heatmap到你的项目中 引入d3.js文件（使用最新的版本），或者下载到">
+<meta name="keywords" content="heatmap 热力图 Cal-Heatmap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何制作像GitHub里那样的Heatmap热力图">
+<meta property="og:url" content="https://frphoenix.github.io/2018/11/14/如何制作像GitHub里那样的Heatmap热力图/index.html">
+<meta property="og:site_name" content="Snow的个人博客">
+<meta property="og:description" content="github 上的 heatmap 热力图 这种热力图e-chart.js也可以做，但是功能比较单一，无法完全满足要求。这里我们使用 Cal-Heatmap 使用Cal-Heatmap 官网地址注：翻译这篇文章时是2018-11-14，在日后看这篇文章时翻译中的版本可能有改变 开始安装经典的安装方式 下载最新版本的Cal-Heatmap到你的项目中 引入d3.js文件（使用最新的版本），或者下载到">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://frphoenix.github.io/uploads/images/heatmap/github-heatmap.jpg">
+<meta property="og:updated_time" content="2018-11-14T06:45:53.344Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何制作像GitHub里那样的Heatmap热力图">
+<meta name="twitter:description" content="github 上的 heatmap 热力图 这种热力图e-chart.js也可以做，但是功能比较单一，无法完全满足要求。这里我们使用 Cal-Heatmap 使用Cal-Heatmap 官网地址注：翻译这篇文章时是2018-11-14，在日后看这篇文章时翻译中的版本可能有改变 开始安装经典的安装方式 下载最新版本的Cal-Heatmap到你的项目中 引入d3.js文件（使用最新的版本），或者下载到">
+<meta name="twitter:image" content="https://frphoenix.github.io/uploads/images/heatmap/github-heatmap.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://frphoenix.github.io/2018/11/14/如何制作像GitHub里那样的Heatmap热力图/"/>
+
+
+
+
+
+  <title>如何制作像GitHub里那样的Heatmap热力图 | Snow的个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Snow的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/11/14/如何制作像GitHub里那样的Heatmap热力图/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何制作像GitHub里那样的Heatmap热力图</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-14T10:00:26+08:00">
+                2018-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="github-上的-heatmap-热力图"><a href="#github-上的-heatmap-热力图" class="headerlink" title="github 上的 heatmap 热力图"></a>github 上的 heatmap 热力图</h1><p><img src="/uploads/images/heatmap/github-heatmap.jpg" alt="avatar"></p>
+<p>这种热力图e-chart.js也可以做，但是功能比较单一，无法完全满足要求。这里我们使用 Cal-Heatmap</p>
+<h1 id="使用Cal-Heatmap-官网地址"><a href="#使用Cal-Heatmap-官网地址" class="headerlink" title="使用Cal-Heatmap 官网地址"></a>使用Cal-Heatmap <a href="https://cal-heatmap.com/" target="_blank" rel="noopener">官网地址</a></h1><p>注：翻译这篇文章时是2018-11-14，在日后看这篇文章时翻译中的版本可能有改变</p>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h4 id="经典的安装方式"><a href="#经典的安装方式" class="headerlink" title="经典的安装方式"></a>经典的安装方式</h4><ol>
+<li><a href="https://github.com/wa0x6e/cal-heatmap/archive/master.zip" target="_blank" rel="noopener">下载</a>最新版本的Cal-Heatmap到你的项目中</li>
+<li><p>引入<code>d3.js</code>文件（使用最新的版本），或者<a href="http://d3js.org/d3.v3.zip" target="_blank" rel="noopener">下载</a>到本地使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过引入js和css文件来安装 Cal-Heatmap</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/css/cal-heatmap.css&quot; /&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;path/to/cal-heatmap.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="使用-BOWER"><a href="#使用-BOWER" class="headerlink" title="使用 BOWER"></a>使用 BOWER</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower install cal-heatmap</span><br></pre></td></tr></table></figure>
+<p>然后继续执行经典方法的第3步，将其安装到应用程序中</p>
+<h4 id="使用-JAM"><a href="#使用-JAM" class="headerlink" title="使用 JAM"></a>使用 JAM</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jam install cal-heatmap</span><br></pre></td></tr></table></figure>
+<p>然后继续执行经典方法的第3步，将其安装到应用程序中</p>
+<h4 id="使用-CDN"><a href="#使用-CDN" class="headerlink" title="使用 CDN"></a>使用 CDN</h4><p>仅需要在文件HEAD头部里引入以下文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//d3js.org/d3.v3.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><pre><code>轻松愉快地创建你的第一个日历表吧
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;cal-heatmap&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	var cal = new CalHeatMap();</span><br><span class="line">	cal.init(&#123;&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>默认情况下，调用<code>init()</code>方法并传入一个空的对象作为参数，将会初始化一个12小时的空白日历，从当前时间（小时）开始计算，每个有60分钟。</p>
+<h2 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h2><p>Cal-Heatmap 可在大多数支持 SVG 的现代浏览器中工作，在以下浏览器中通过了测试：</p>
+<ul>
+<li>Internet Explorer 9+</li>
+<li>Firefox 4+</li>
+<li>Chrome 14+</li>
+<li>Safari 5.0+</li>
+<li>Opera 10+</li>
+</ul>
+<h2 id="我的备注"><a href="#我的备注" class="headerlink" title="我的备注"></a>我的备注</h2><h3 id="在Vue中使用-Cal-Heatmap"><a href="#在Vue中使用-Cal-Heatmap" class="headerlink" title="在Vue中使用 Cal-Heatmap"></a>在Vue中使用 Cal-Heatmap</h3><p>在要使用的组件中引用文件，或者全局引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &apos;@/plugin/cal-heatmap/cal-heatmap.css&apos;</span><br><span class="line">import &apos;@/plugin/cal-heatmap/d3.v3.js&apos;</span><br><span class="line">import &apos;@/plugin/cal-heatmap/cal-heatmap.js&apos;</span><br></pre></td></tr></table></figure></p>
+<p>后面的操作你懂得….</p>
+<p>在vue中通过经典方法来使用Cal-Heatmap时没有成功</p>
+<ol>
+<li>报错 <code>Can&#39;t resolve &#39;d3&#39; in XXX</code> 。这个原因是因为<code>cal-heatmap.js</code>的第 9 行<code>var d3 = typeof require === &quot;function&quot; ? require(&quot;d3&quot;) : window.d3;</code> 和 <code>d3.v3.js</code> 的第 9270 行<code>module.exports = d3;</code> 共同造成的。<br>因为vue是在 node 环境中，所以 <code>require</code> 和 <code>module</code> 都是存在的，但是我这里的<code>module.exports</code>是<code>undefined</code>，而 <code>require</code> 是要求返回一个 <code>module</code> 的，也是有通过<code>module.exports</code>返回，所以出现了错误。这里将<code>cal-heatmap.js</code>的第 9 行改为<code>var d3 =  window.d3;</code></li>
+<li>在 vue 中引用<code>d3.v3.js</code>时，在 9272 行<code>this.d3 = d3;</code> 的 <code>this</code> 不是指向 <code>window</code> 而是 <code>undefined</code>，所以将 <code>this</code> 改为 <code>window</code></li>
+</ol>
+<h4 id="为了满足按需引入这两个比较大的js文件，对cal-heatmap-js-引用-d3-v3-js-文件的方式进行改变"><a href="#为了满足按需引入这两个比较大的js文件，对cal-heatmap-js-引用-d3-v3-js-文件的方式进行改变" class="headerlink" title="为了满足按需引入这两个比较大的js文件，对cal-heatmap.js 引用 d3.v3.js 文件的方式进行改变"></a>为了满足按需引入这两个比较大的js文件，对<code>cal-heatmap.js</code> 引用 <code>d3.v3.js</code> 文件的方式进行改变</h4><ol>
+<li><p>将<code>d3.v3.js</code>的第 1 行去掉，并且将 9267 ~ 9274 行去掉，然后添加一行export</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// !function() &#123;</span><br><span class="line">	....</span><br><span class="line">	....</span><br><span class="line">	....</span><br><span class="line">// if (typeof define === &quot;function&quot; &amp;&amp; define.amd) &#123;</span><br><span class="line">//   define(d3);</span><br><span class="line">// &#125; else if (typeof module === &quot;object&quot; &amp;&amp; module.exports) &#123;</span><br><span class="line">//   module.exports = d3;</span><br><span class="line">// &#125; else &#123;</span><br><span class="line">//   window.d3 = d3;</span><br><span class="line">// &#125;</span><br><span class="line">// &#125;();</span><br><span class="line">export default d3;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将<code>cal-heatmap.js</code>的第 9 行替换为<code>import ...</code>，并将 3475 ~ 3485 行去掉，添加<code>export ...</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// var d3 = typeof require === &quot;function&quot; ? require(&quot;d3&quot;) : window.d3;</span><br><span class="line">import d3 from &apos;@/plugin/cal-heatmap/d3.v3.js&apos;</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">// if (typeof define === &quot;function&quot; &amp;&amp; define.amd) &#123;</span><br><span class="line">// 	define([&quot;d3&quot;], function() &#123;</span><br><span class="line">// 		&quot;use strict&quot;;</span><br><span class="line"></span><br><span class="line">// 		return CalHeatMap;</span><br><span class="line">// 	&#125;);</span><br><span class="line">// &#125; else if (typeof module === &quot;object&quot; &amp;&amp; module.exports) &#123;</span><br><span class="line">// 	module.exports = CalHeatMap;</span><br><span class="line">// &#125; else &#123;</span><br><span class="line">// 	window.CalHeatMap = CalHeatMap;</span><br><span class="line">// &#125;</span><br><span class="line">export default CalHeatMap;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这样就不需要在组件里引用<code>d3.v3.js</code>文件了，而且没有将 d3 和 CalHeatMap 对象添加到 window 对象。</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/heatmap-热力图-Cal-Heatmap/" rel="tag"># heatmap 热力图 Cal-Heatmap</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/09/vue使用webpack代理跨域/" rel="next" title="vue使用webpack代理跨域">
+                <i class="fa fa-chevron-left"></i> vue使用webpack代理跨域
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/15/vue添加时间格式化过滤器/" rel="prev" title="vue添加时间格式化过滤器">
+                vue添加时间格式化过滤器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/images/avatar.png"
+                alt="Snow Liu" />
+            
+              <p class="site-author-name" itemprop="name">Snow Liu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#github-上的-heatmap-热力图"><span class="nav-number">1.</span> <span class="nav-text">github 上的 heatmap 热力图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Cal-Heatmap-官网地址"><span class="nav-number">2.</span> <span class="nav-text">使用Cal-Heatmap 官网地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始"><span class="nav-number">3.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#经典的安装方式"><span class="nav-number">3.1.0.1.</span> <span class="nav-text">经典的安装方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-BOWER"><span class="nav-number">3.1.0.2.</span> <span class="nav-text">使用 BOWER</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-JAM"><span class="nav-number">3.1.0.3.</span> <span class="nav-text">使用 JAM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-CDN"><span class="nav-number">3.1.0.4.</span> <span class="nav-text">使用 CDN</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本使用"><span class="nav-number">3.2.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器支持"><span class="nav-number">3.3.</span> <span class="nav-text">浏览器支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的备注"><span class="nav-number">3.4.</span> <span class="nav-text">我的备注</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在Vue中使用-Cal-Heatmap"><span class="nav-number">3.4.1.</span> <span class="nav-text">在Vue中使用 Cal-Heatmap</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为了满足按需引入这两个比较大的js文件，对cal-heatmap-js-引用-d3-v3-js-文件的方式进行改变"><span class="nav-number">3.4.1.1.</span> <span class="nav-text">为了满足按需引入这两个比较大的js文件，对cal-heatmap.js 引用 d3.v3.js 文件的方式进行改变</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Snow Liu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

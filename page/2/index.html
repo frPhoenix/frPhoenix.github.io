@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/04/laravel-try-catch无效/">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/11/14/如何制作像GitHub里那样的Heatmap热力图/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Snow Liu">
@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/04/laravel-try-catch无效/" itemprop="url">laravel里try catch无效</a></h1>
+                <a class="post-title-link" href="/2018/11/14/如何制作像GitHub里那样的Heatmap热力图/" itemprop="url">如何制作像GitHub里那样的Heatmap热力图</a></h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T18:18:53+08:00">
-                2018-10-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-14T10:00:26+08:00">
+                2018-11-14
               </time>
             
 
@@ -300,768 +300,49 @@
       
         
           
-            <p>引自：<a href="https://blog.csdn.net/u013091013/article/details/79579357" target="_blank" rel="noopener">https://blog.csdn.net/u013091013/article/details/79579357</a></p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在使用laravel框架的时候使用try catch，发现无效，如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try &#123;</span><br><span class="line">    echo $a;</span><br><span class="line">&#125; catch (Exception $e) &#123;</span><br><span class="line">    echo &apos;出错了&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>错误信息如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Undefined variable: a</span><br></pre></td></tr></table></figure></p>
-<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>后来发现laravel5使用命名空间，控制器被强制放到了子命名空间下</p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>在文件开头使用 use \Exception,或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try &#123;</span><br><span class="line">    echo $a;</span><br><span class="line">&#125; catch (\Exception $e) &#123;</span><br><span class="line">    echo &apos;出错了&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/04/laravel报错：’XXX控制器‘is_not_instantiable/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/04/laravel报错：’XXX控制器‘is_not_instantiable/" itemprop="url">instantiable.</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T16:59:31+08:00">
-                2018-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="我的问题"><a href="#我的问题" class="headerlink" title="我的问题"></a>我的问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Target [App\Http\Controllers\Article\ArticleController] is not instantiable.</span><br></pre></td></tr></table></figure>
-<h4 id="报错对应的代码"><a href="#报错对应的代码" class="headerlink" title="报错对应的代码"></a>报错对应的代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace App\Http\Controllers\Article;</span><br><span class="line"></span><br><span class="line">use App\Http\Controllers\Controller;</span><br><span class="line">use App\Repositories\Article\ArticleRepository;</span><br><span class="line">use Illuminate\Http\Request;</span><br><span class="line"></span><br><span class="line">class ArticleController extends Controller</span><br><span class="line">&#123;</span><br><span class="line">    private $articleRepository = &apos;&apos;;</span><br><span class="line">    private function __construct(ArticleRepository $articleRepository)</span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;articleRepository = $articleRepository;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function create (Request $request) &#123;</span><br><span class="line">        return $request-&gt;toArray();</span><br><span class="line">    ....</span><br><span class="line">    ....</span><br></pre></td></tr></table></figure>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
-<li>将<code>__construct()</code> 方法前的 private 改为 public。</li>
-<li>待补充</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/04/Lumen-laravel添加全局自定义函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/04/Lumen-laravel添加全局自定义函数/" itemprop="url">Lumen/laravel添加全局自定义函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T10:52:22+08:00">
-                2018-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="创建自定义文件"><a href="#创建自定义文件" class="headerlink" title="创建自定义文件"></a>创建自定义文件</h4><ul>
-<li>在任意文件夹下新建一个 functions.php 文件</li>
-<li>如：”app/Common/Functions/functions.php”</li>
-</ul>
-<h4 id="配置自动加载"><a href="#配置自动加载" class="headerlink" title="配置自动加载"></a>配置自动加载</h4><ul>
-<li>在 composer.json 文件中添加配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;autoload&quot;: &#123;</span><br><span class="line">        &quot;files&quot;: [</span><br><span class="line">            &quot;app/Common/Functions/functions.php&quot;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="github-上的-heatmap-热力图"><a href="#github-上的-heatmap-热力图" class="headerlink" title="github 上的 heatmap 热力图"></a>github 上的 heatmap 热力图</h1><p><img src="/uploads/images/heatmap/github-heatmap.jpg" alt="avatar"></p>
+<p>这种热力图e-chart.js也可以做，但是功能比较单一，无法完全满足要求。这里我们使用 Cal-Heatmap</p>
+<h1 id="使用Cal-Heatmap-官网地址"><a href="#使用Cal-Heatmap-官网地址" class="headerlink" title="使用Cal-Heatmap 官网地址"></a>使用Cal-Heatmap <a href="https://cal-heatmap.com/" target="_blank" rel="noopener">官网地址</a></h1><p>注：翻译这篇文章时是2018-11-14，在日后看这篇文章时翻译中的版本可能有改变</p>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h4 id="经典的安装方式"><a href="#经典的安装方式" class="headerlink" title="经典的安装方式"></a>经典的安装方式</h4><ol>
+<li><a href="https://github.com/wa0x6e/cal-heatmap/archive/master.zip" target="_blank" rel="noopener">下载</a>最新版本的Cal-Heatmap到你的项目中</li>
+<li><p>引入<code>d3.js</code>文件（使用最新的版本），或者<a href="http://d3js.org/d3.v3.zip" target="_blank" rel="noopener">下载</a>到本地使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>通过引入js和css文件来安装 Cal-Heatmap</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/css/cal-heatmap.css&quot; /&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;path/to/cal-heatmap.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="使用-BOWER"><a href="#使用-BOWER" class="headerlink" title="使用 BOWER"></a>使用 BOWER</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower install cal-heatmap</span><br></pre></td></tr></table></figure>
+<p>然后继续执行经典方法的第3步，将其安装到应用程序中</p>
+<h4 id="使用-JAM"><a href="#使用-JAM" class="headerlink" title="使用 JAM"></a>使用 JAM</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jam install cal-heatmap</span><br></pre></td></tr></table></figure>
+<p>然后继续执行经典方法的第3步，将其安装到应用程序中</p>
+<h4 id="使用-CDN"><a href="#使用-CDN" class="headerlink" title="使用 CDN"></a>使用 CDN</h4><p>仅需要在文件HEAD头部里引入以下文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//d3js.org/d3.v3.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><pre><code>轻松愉快地创建你的第一个日历表吧
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;cal-heatmap&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	var cal = new CalHeatMap();</span><br><span class="line">	cal.init(&#123;&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>默认情况下，调用<code>init()</code>方法并传入一个空的对象作为参数，将会初始化一个12小时的空白日历，从当前时间（小时）开始计算，每个有60分钟。</p>
+<h2 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h2><p>Cal-Heatmap 可在大多数支持 SVG 的现代浏览器中工作，在以下浏览器中通过了测试：</p>
+<ul>
+<li>Internet Explorer 9+</li>
+<li>Firefox 4+</li>
+<li>Chrome 14+</li>
+<li>Safari 5.0+</li>
+<li>Opera 10+</li>
 </ul>
-<h4 id="重新加载配置"><a href="#重新加载配置" class="headerlink" title="重新加载配置"></a>重新加载配置</h4><ul>
-<li>运行命令：$ composer dump-auto</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/04/Lumen-laravel使用UUID/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/04/Lumen-laravel使用UUID/" itemprop="url">Lumen/laravel使用UUID</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T10:51:54+08:00">
-                2018-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="安装Uuid"><a href="#安装Uuid" class="headerlink" title="安装Uuid"></a>安装Uuid</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require webpatser/laravel-uuid</span><br></pre></td></tr></table></figure>
-<h3 id="配置全局函数使用-UUID"><a href="#配置全局函数使用-UUID" class="headerlink" title="配置全局函数使用 UUID"></a>配置全局函数使用 UUID</h3><ul>
-<li>配置全局函数得方法参照另外一篇 《添加全局自定义函数》</li>
-<li>在全局函数文件中添加如下代码</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">use Webpatser\Uuid\Uuid;</span><br><span class="line">/**</span><br><span class="line"> * 生成 uuid  &quot;de99ff30-6d4c-11e8-b243-27600b662ccc&quot;</span><br><span class="line"> * @return string</span><br><span class="line"> */</span><br><span class="line">function uuid() &#123;</span><br><span class="line">    return Uuid::generate()-&gt;string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/02/编程艺术中的优质代码片段/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/02/编程艺术中的优质代码片段/" itemprop="url">编程艺术中的优质代码片段</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T10:21:54+08:00">
-                2018-10-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="获取-XMLHttpRequest-对象-（兼容处理）"><a href="#获取-XMLHttpRequest-对象-（兼容处理）" class="headerlink" title="获取 XMLHttpRequest 对象 （兼容处理）"></a>获取 XMLHttpRequest 对象 （兼容处理）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function getHTTPObject () &#123;</span><br><span class="line">	if (typeof XMLHttpRequest == &apos;undefined&apos;)</span><br><span class="line">		XMLHttpRequest = function () &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				return new ActiveXObject(&apos;Msxml2.XMLHTTP.6.0&apos;);</span><br><span class="line">			&#125; catch (e) &#123;&#125;</span><br><span class="line">			try &#123;</span><br><span class="line">				return new ActiveXObject(&apos;Msxml2.XMLHTTP.3.0&apos;);</span><br><span class="line">			&#125; catch (e) &#123;&#125;</span><br><span class="line">			try &#123;</span><br><span class="line">				return new ActiveXObject(&apos;Msxml2.XMLHTTP&apos;);</span><br><span class="line">			&#125; catch (e) &#123;&#125;</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">	return new XMLHttpRequest();</span><br><span class="line">&#125;</span><br><span class="line">// 获取</span><br><span class="line">let request = getHTTPRequest();</span><br></pre></td></tr></table></figure>
-<h2 id="获取下一个元素节点"><a href="#获取下一个元素节点" class="headerlink" title="获取下一个元素节点"></a>获取下一个元素节点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function getNextElement (node) &#123;</span><br><span class="line">	if (node.nodeType == 1) &#123;</span><br><span class="line">		return node;</span><br><span class="line">	&#125;</span><br><span class="line">	if (node.nextSibling) &#123;</span><br><span class="line">		return getNextElement(node.nextSibling);</span><br><span class="line">	&#125;</span><br><span class="line">	return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="追加-className"><a href="#追加-className" class="headerlink" title="追加 className"></a>追加 className</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function addClass (element, value) &#123;</span><br><span class="line">	if (!element.className)&#123;</span><br><span class="line">		element.className = value;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		var newClassName = element.className;</span><br><span class="line">		newClassName += &apos; &apos;;</span><br><span class="line">		newClassName += value;</span><br><span class="line">		element.className = newClassName;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/01/DOM相关基础/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/01/DOM相关基础/" itemprop="url">DOM Core 与 HTML-DOM 的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-01T22:15:30+08:00">
-                2018-10-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>DOM Core 与 HTML-DOM 都是为操作元素或元素属性。只是 DOM Core 是通过相关方法来实现，HTML-DOM 是通过操作对象属性实现。<br>例如：</p>
+<h2 id="我的备注"><a href="#我的备注" class="headerlink" title="我的备注"></a>我的备注</h2><h3 id="在Vue中使用-Cal-Heatmap"><a href="#在Vue中使用-Cal-Heatmap" class="headerlink" title="在Vue中使用 Cal-Heatmap"></a>在Vue中使用 Cal-Heatmap</h3><p>在要使用的组件中引用文件，或者全局引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &apos;@/plugin/cal-heatmap/cal-heatmap.css&apos;</span><br><span class="line">import &apos;@/plugin/cal-heatmap/d3.v3.js&apos;</span><br><span class="line">import &apos;@/plugin/cal-heatmap/cal-heatmap.js&apos;</span><br></pre></td></tr></table></figure></p>
+<p>后面的操作你懂得….</p>
+<p>在vue中通过经典方法来使用Cal-Heatmap时没有成功</p>
 <ol>
-<li><p>HTML-DOM提供了一个 forms 对象，这个对象可以把下面的语句：</p>
- <figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">简化为</span><br><span class="line">``` document.forms</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>HTML-DOM为图片提供 src 属性可以把下面的语句：</p>
- <figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">简化为</span><br><span class="line">``` element.src</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>HTML-DOM为链接提供 href 属性可以把下面的语句：</p>
- <figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">简化为</span><br><span class="line">``` element.href</span><br></pre></td></tr></table></figure></li>
+<li>报错 <code>Can&#39;t resolve &#39;d3&#39; in XXX</code> 。这个原因是因为<code>cal-heatmap.js</code>的第 9 行<code>var d3 = typeof require === &quot;function&quot; ? require(&quot;d3&quot;) : window.d3;</code> 和 <code>d3.v3.js</code> 的第 9270 行<code>module.exports = d3;</code> 共同造成的。<br>因为vue是在 node 环境中，所以 <code>require</code> 和 <code>module</code> 都是存在的，但是我这里的<code>module.exports</code>是<code>undefined</code>，而 <code>require</code> 是要求返回一个 <code>module</code> 的，也是有通过<code>module.exports</code>返回，所以出现了错误。这里将<code>cal-heatmap.js</code>的第 9 行改为<code>var d3 =  window.d3;</code></li>
+<li>在 vue 中引用<code>d3.v3.js</code>时，在 9272 行<code>this.d3 = d3;</code> 的 <code>this</code> 不是指向 <code>window</code> 而是 <code>undefined</code>，所以将 <code>this</code> 改为 <code>window</code></li>
 </ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/09/30/handleImg/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/30/handleImg/" itemprop="url">img 标签的相关操作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T15:01:01+08:00">
-                2018-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="等比缩放"><a href="#等比缩放" class="headerlink" title="等比缩放"></a>等比缩放</h3><pre><code>只设置 img 标签的宽度，不设置高度
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.logo &gt; img &#123;</span><br><span class="line">	width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="禁用对图片的操作"><a href="#禁用对图片的操作" class="headerlink" title="禁用对图片的操作"></a>禁用对图片的操作</h3><ol>
-<li><code>ondragstart=&quot;return false;&quot;</code> // 禁止拖拽图片</li>
-<li><code>oncontextmenu=&quot;return false;&quot;</code> // 禁止鼠标右键</li>
-<li><code>ondragstart=&quot;return false;&quot;</code> // 禁止鼠标拖动</li>
-<li><code>onselectstart=&quot;return false;&quot;</code> // 文字禁止鼠标选中</li>
-<li><code>onselect=&quot;document.selection.empty();&quot;</code> // 禁止复制文本<br>使用方法如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;../images/logo.png&quot; ondragstart=&quot;return false;&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="为了满足按需引入这两个比较大的js文件，对cal-heatmap-js-引用-d3-v3-js-文件的方式进行改变"><a href="#为了满足按需引入这两个比较大的js文件，对cal-heatmap-js-引用-d3-v3-js-文件的方式进行改变" class="headerlink" title="为了满足按需引入这两个比较大的js文件，对cal-heatmap.js 引用 d3.v3.js 文件的方式进行改变"></a>为了满足按需引入这两个比较大的js文件，对<code>cal-heatmap.js</code> 引用 <code>d3.v3.js</code> 文件的方式进行改变</h4><ol>
+<li><p>将<code>d3.v3.js</code>的第 1 行去掉，并且将 9267 ~ 9274 行去掉，然后添加一行export</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// !function() &#123;</span><br><span class="line">	....</span><br><span class="line">	....</span><br><span class="line">	....</span><br><span class="line">// if (typeof define === &quot;function&quot; &amp;&amp; define.amd) &#123;</span><br><span class="line">//   define(d3);</span><br><span class="line">// &#125; else if (typeof module === &quot;object&quot; &amp;&amp; module.exports) &#123;</span><br><span class="line">//   module.exports = d3;</span><br><span class="line">// &#125; else &#123;</span><br><span class="line">//   window.d3 = d3;</span><br><span class="line">// &#125;</span><br><span class="line">// &#125;();</span><br><span class="line">export default d3;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将<code>cal-heatmap.js</code>的第 9 行替换为<code>import ...</code>，并将 3475 ~ 3485 行去掉，添加<code>export ...</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// var d3 = typeof require === &quot;function&quot; ? require(&quot;d3&quot;) : window.d3;</span><br><span class="line">import d3 from &apos;@/plugin/cal-heatmap/d3.v3.js&apos;</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">// if (typeof define === &quot;function&quot; &amp;&amp; define.amd) &#123;</span><br><span class="line">// 	define([&quot;d3&quot;], function() &#123;</span><br><span class="line">// 		&quot;use strict&quot;;</span><br><span class="line"></span><br><span class="line">// 		return CalHeatMap;</span><br><span class="line">// 	&#125;);</span><br><span class="line">// &#125; else if (typeof module === &quot;object&quot; &amp;&amp; module.exports) &#123;</span><br><span class="line">// 	module.exports = CalHeatMap;</span><br><span class="line">// &#125; else &#123;</span><br><span class="line">// 	window.CalHeatMap = CalHeatMap;</span><br><span class="line">// &#125;</span><br><span class="line">export default CalHeatMap;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这样就不需要在组件里引用<code>d3.v3.js</code>文件了，而且没有将 d3 和 CalHeatMap 对象添加到 window 对象。</p>
 </li>
 </ol>
 
@@ -1112,7 +393,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/09/30/移动端自动设置字体大小/">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/11/09/vue使用webpack代理跨域/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Snow Liu">
@@ -1131,7 +412,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/30/移动端自动设置字体大小/" itemprop="url">移动端自动设置字体大小</a></h1>
+                <a class="post-title-link" href="/2018/11/09/vue使用webpack代理跨域/" itemprop="url">vue使用webpack代理跨域</a></h1>
         
 
         <div class="post-meta">
@@ -1143,8 +424,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T11:25:55+08:00">
-                2018-09-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-09T16:12:02+08:00">
+                2018-11-09
               </time>
             
 
@@ -1183,310 +464,1052 @@
       
         
           
-            <p>来自：<a href="https://segmentfault.com/a/1190000004189237" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004189237</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line">!function(win, lib) &#123;</span><br><span class="line">    var timer,</span><br><span class="line">        doc     = win.document,</span><br><span class="line">        docElem = doc.documentElement,</span><br><span class="line"></span><br><span class="line">        vpMeta   = doc.querySelector(&apos;meta[name=&quot;viewport&quot;]&apos;),</span><br><span class="line">        flexMeta = doc.querySelector(&apos;meta[name=&quot;flexible&quot;]&apos;),</span><br><span class="line"> </span><br><span class="line">        dpr   = 0,</span><br><span class="line">        scale = 0,</span><br><span class="line"> </span><br><span class="line">        flexible = lib.flexible || (lib.flexible = &#123;&#125;);</span><br><span class="line"> 	</span><br><span class="line">	console.log(vpMeta, flexMeta)</span><br><span class="line">    // 设置了 viewport meta</span><br><span class="line">    if (vpMeta) &#123;</span><br><span class="line">        console.warn(&quot;将根据已有的meta标签来设置缩放比例&quot;);</span><br><span class="line">        var initial = vpMeta.getAttribute(&quot;content&quot;).match(/initial\-scale=([\d\.]+)/);</span><br><span class="line"> </span><br><span class="line">        if (initial) &#123;</span><br><span class="line">            scale = parseFloat(initial[1]); // 已设置的 initialScale</span><br><span class="line">            dpr = parseInt(1 / scale);      // 设备像素比 devicePixelRatio</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">    // 设置了 flexible Meta</span><br><span class="line">    else if (flexMeta) &#123;</span><br><span class="line">        var flexMetaContent = flexMeta.getAttribute(&quot;content&quot;);</span><br><span class="line">        if (flexMetaContent) &#123;</span><br><span class="line"> </span><br><span class="line">            var initial = flexMetaContent.match(/initial\-dpr=([\d\.]+)/),</span><br><span class="line">                maximum = flexMetaContent.match(/maximum\-dpr=([\d\.]+)/);</span><br><span class="line"> </span><br><span class="line">            if (initial) &#123;</span><br><span class="line">                dpr = parseFloat(initial[1]);</span><br><span class="line">                scale = parseFloat((1 / dpr).toFixed(2));</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line">            if (maximum) &#123;</span><br><span class="line">                dpr = parseFloat(maximum[1]);</span><br><span class="line">                scale = parseFloat((1 / dpr).toFixed(2));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // viewport 或 flexible</span><br><span class="line">    // meta 均未设置</span><br><span class="line">    if (!dpr &amp;&amp; !scale) &#123;</span><br><span class="line">        // QST</span><br><span class="line">        // 这里的 第一句有什么用 ?</span><br><span class="line">        // 和 Android 有毛关系 ?</span><br><span class="line">        var u = (win.navigator.appVersion.match(/android/gi), win.navigator.appVersion.match(/iphone/gi)),</span><br><span class="line">            _dpr = win.devicePixelRatio;</span><br><span class="line"> </span><br><span class="line">        // 所以这里似乎是将所有 Android 设备都设置为 1 了</span><br><span class="line">        dpr = u ? ( (_dpr &gt;= 3 &amp;&amp; (!dpr || dpr &gt;= 3))</span><br><span class="line">                        ? 3</span><br><span class="line">                        : (_dpr &gt;= 2 &amp;&amp; (!dpr || dpr &gt;= 2))</span><br><span class="line">                            ? 2</span><br><span class="line">                            : 1</span><br><span class="line">                  )</span><br><span class="line">                : 1;</span><br><span class="line"> </span><br><span class="line">        scale = 1 / dpr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	docElem.setAttribute(&quot;data-dpr&quot;, dpr);</span><br><span class="line"></span><br><span class="line">    // 插入 viewport meta</span><br><span class="line">    if (!vpMeta) &#123;</span><br><span class="line">        vpMeta = doc.createElement(&quot;meta&quot;);</span><br><span class="line">         </span><br><span class="line">        vpMeta.setAttribute(&quot;name&quot;, &quot;viewport&quot;);</span><br><span class="line">        vpMeta.setAttribute(&quot;content&quot;,</span><br><span class="line">            &quot;initial-scale=&quot; + scale + &quot;, maximum-scale=&quot; + scale + &quot;, minimum-scale=&quot; + scale + &quot;, user-scalable=no&quot;);</span><br><span class="line"> </span><br><span class="line">        if (docElem.firstElementChild) &#123;</span><br><span class="line">            docElem.firstElementChild.appendChild(vpMeta)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            var div = doc.createElement(&quot;div&quot;);</span><br><span class="line">            div.appendChild(vpMeta);</span><br><span class="line">            doc.write(div.innerHTML);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function setFontSize() &#123;</span><br><span class="line">        var winWidth = docElem.getBoundingClientRect().width;</span><br><span class="line"> </span><br><span class="line">        if (winWidth / dpr &gt; 540) &#123;</span><br><span class="line">            (winWidth = 540 * dpr);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        // 根节点 fontSize 根据宽度决定</span><br><span class="line">        var baseSize = winWidth / 10;</span><br><span class="line"> </span><br><span class="line">        docElem.style.fontSize = baseSize + &quot;px&quot;;</span><br><span class="line">        flexible.rem = win.rem = baseSize;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    // 调整窗口时重置</span><br><span class="line">    win.addEventListener(&quot;resize&quot;, function() &#123;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        timer = setTimeout(setFontSize, 300);</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">    // 这一段是我自己加的</span><br><span class="line">    // orientationchange（设备的纵横方向改变）时也需要重算下吧</span><br><span class="line">    win.addEventListener(&quot;orientationchange&quot;, function() &#123;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        timer = setTimeout(setFontSize, 300);</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // pageshow</span><br><span class="line">    // keyword: 倒退 缓存相关</span><br><span class="line">    win.addEventListener(&quot;pageshow&quot;, function(e) &#123;</span><br><span class="line">        if (e.persisted) &#123;</span><br><span class="line">            clearTimeout(timer);</span><br><span class="line">            timer = setTimeout(setFontSize, 300);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, false);</span><br><span class="line"></span><br><span class="line">    // 设置基准字体</span><br><span class="line">    if (&quot;complete&quot; === doc.readyState) &#123;</span><br><span class="line">        doc.body.style.fontSize = 12 * dpr + &quot;px&quot;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        doc.addEventListener(&quot;DOMContentLoaded&quot;, function() &#123;</span><br><span class="line">            doc.body.style.fontSize = 12 * dpr + &quot;px&quot;;</span><br><span class="line">        &#125;, false);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	setFontSize();</span><br><span class="line"></span><br><span class="line">	flexible.dpr = win.dpr = dpr;</span><br><span class="line"></span><br><span class="line">	flexible.refreshRem = setFontSize;</span><br><span class="line"></span><br><span class="line">    flexible.rem2px = function(d) &#123;</span><br><span class="line">        var c = parseFloat(d) * this.rem;</span><br><span class="line">        if (&quot;string&quot; == typeof d &amp;&amp; d.match(/rem$/)) &#123;</span><br><span class="line">            c += &quot;px&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return c;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    flexible.px2rem = function(d) &#123;</span><br><span class="line">        var c = parseFloat(d) / this.rem;</span><br><span class="line">         </span><br><span class="line">        if (&quot;string&quot; == typeof d &amp;&amp; d.match(/px$/)) &#123;</span><br><span class="line">            c += &quot;rem&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(window, window.lib || (window.lib = &#123;&#125;));</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/09/30/layuiZoomTable/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/30/layuiZoomTable/" itemprop="url">layUI速查表</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T09:39:28+08:00">
-                2018-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="常用class"><a href="#常用class" class="headerlink" title="常用class"></a>常用class</h1><table>
-<thead>
-<tr>
-<th style="text-align:left">class名</th>
-<th style="text-align:left">作用</th>
-<th style="text-align:left">注释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">layui-container</td>
-<td style="text-align:left">内容</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">layui-fluid</td>
-<td style="text-align:left">内容</td>
-<td style="text-align:left">宽度将不会固定，而是 100% 适应</td>
-</tr>
-<tr>
-<td style="text-align:left">layui-row</td>
-<td style="text-align:left">行</td>
-<td style="text-align:left">栅格系统的行，共12列</td>
-</tr>
-<tr>
-<td style="text-align:left">layui-col-xs*</td>
-<td style="text-align:left">列</td>
-<td style="text-align:left">超小屏（手机&lt;768px）</td>
-</tr>
-<tr>
-<td style="text-align:left">layui-col-sm*</td>
-<td style="text-align:left">列</td>
-<td style="text-align:left">小屏幕(平板≥768px）</td>
-</tr>
-<tr>
-<td style="text-align:left">layui-col-md*</td>
-<td style="text-align:left">列</td>
-<td style="text-align:left">中等屏幕(桌面≥992px)</td>
-</tr>
-<tr>
-<td style="text-align:left">layui-col-lg*</td>
-<td style="text-align:left">列</td>
-<td style="text-align:left">大型屏幕(桌面≥1200px)</td>
-</tr>
-<tr>
-<td style="text-align:left">layui-col-space1</td>
-<td style="text-align:left">列之间间隔 1px</td>
-<td style="text-align:left">另外还有值为：3、5、8、10、12、15、18、20、22、28、30</td>
-</tr>
-</tbody>
-</table>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/09/29/useNginx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Snow Liu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snow的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/29/useNginx/" itemprop="url">在mac下使用Nginx</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-29T17:11:01+08:00">
-                2018-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h1><p>…<br>…</p>
-<h1 id="配置虚拟域名"><a href="#配置虚拟域名" class="headerlink" title="配置虚拟域名"></a>配置虚拟域名</h1><p>用一个例子来说明：要给项目文件夹为 <code>/Users/phoenix/Web/HTMLhttp/</code> 的项目配置虚拟域名为 <code>http://html.server.cn</code></p>
+            <h1 id="vue-cli3-使用webpack跨域"><a href="#vue-cli3-使用webpack跨域" class="headerlink" title="vue-cli3 使用webpack跨域"></a>vue-cli3 使用webpack跨域</h1><ol>
+<li><p>在项目根目录下的 <code>vue.config.js</code> 里添加配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  chainWebpack: config =&gt; &#123;</span><br><span class="line">    config.resolve.alias</span><br><span class="line">      .set(&apos;@&apos;, resolve(&apos;src&apos;)) // key,value自行定义，比如.set(&apos;@@&apos;, resolve(&apos;src/components&apos;))</span><br><span class="line">      .set(&apos;_c&apos;, resolve(&apos;src/components&apos;))</span><br><span class="line">      .set(&apos;_conf&apos;, resolve(&apos;config&apos;))</span><br><span class="line">  &#125;,</span><br><span class="line">  //添加如下配置</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    proxy: &#123;</span><br><span class="line">      &apos;api&apos;: &#123;</span><br><span class="line">        target: &apos;http://article.cn/&apos;, // 目标域名，可以是ip地址</span><br><span class="line">        changeOrigin: true,   		  // 将主机头的起始位置更改为目标URL</span><br><span class="line">        secure: false,</span><br><span class="line">        pathRewrite: &#123;&apos;^/api&apos; : &apos;&apos;&#125;, // 将使用时用来匹配的api去掉</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">axios.request(&#123;</span><br><span class="line">      url: &apos;/api/article/create_article&apos;,</span><br><span class="line">      data,</span><br><span class="line">      method: &apos;POST&apos;</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(data =&gt; &#123; &#125;)</span><br><span class="line">    .catch(error =&gt; &#123; &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>我实际要访问的地址是：<code>http://article.cn/article/create_article</code>。其中<code>http://article.cn</code>域名是通过代理添加上的，<code>/api</code>是<code>pathRewrite: {&#39;^/api&#39; : &#39;&#39;}</code>这句去掉的。</p>
+<h3 id="注：我这里axios使用-baseURL-配置了本地域名-http-localhost-8080"><a href="#注：我这里axios使用-baseURL-配置了本地域名-http-localhost-8080" class="headerlink" title="注：我这里axios使用 baseURL 配置了本地域名 http://localhost:8080/"></a>注：我这里axios使用 <code>baseURL</code> 配置了本地域名 <code>http://localhost:8080/</code></h3><h1 id="vue-cli2-使用webpack跨域"><a href="#vue-cli2-使用webpack跨域" class="headerlink" title="vue-cli2 使用webpack跨域"></a>vue-cli2 使用webpack跨域</h1><p>参考：<a href="https://www.jianshu.com/p/7f1c8037dc7b" target="_blank" rel="noopener">https://www.jianshu.com/p/7f1c8037dc7b</a></p>
 <ol>
-<li><p>在 /etc/hosts 文件里添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1       html.server.cn</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在 nginx.conf 文件里添加（我的nginx.conf文件在 <code>/usr/local/etc/nginx</code> 目录下）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">	//添加以下代码</span><br><span class="line">	server &#123;</span><br><span class="line">	    listen       80;</span><br><span class="line">	    server_name  html.server.cn;</span><br><span class="line">	    root /Users/phoenix/Web/HTMLhttp/;</span><br><span class="line">	    location / &#123;</span><br><span class="line">	        index index.php index.html index.htm;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 或者（我更推荐的方式）<br> 在 <code>/usr/local/etc/nginx</code> 目录下新建一个文件夹 <code>servers</code>，接着在 <code>servers</code> 文件夹下新建一个配置文件 mynginx.conf (文件名可自定义)<br> 在 mynginx.conf 文件里添加配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  html.server.cn;</span><br><span class="line">    root /Users/phoenix/Web/HTMLhttp/;</span><br><span class="line">    location / &#123;</span><br><span class="line">        index index.php index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 然后在 nginx.conf 配置文件里引用 mynginx.conf 配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">	include servers/mynginx.conf; // 新增这行代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>在 <code>config</code> 文件夹下的 <code>index.js</code> 文件里找到 <code>proxyTable</code> 项，它默认是空的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  dev: &#123;</span><br><span class="line"></span><br><span class="line">    // Paths</span><br><span class="line">    assetsSubDirectory: &apos;static&apos;,</span><br><span class="line">    assetsPublicPath: &apos;/&apos;,</span><br><span class="line">    proxyTable: &#123;&#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<p>与上面一样添加配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">proxy: &#123;</span><br><span class="line">  &apos;api&apos;: &#123;</span><br><span class="line">    target: &apos;http://article.cn/&apos;,</span><br><span class="line">    changeOrigin: true,   		  </span><br><span class="line">    secure: false,</span><br><span class="line">    pathRewrite: &#123;&apos;^/api&apos; : &apos;&apos;&#125;, </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="options-‘api’后面的值"><a href="#options-‘api’后面的值" class="headerlink" title="options  (‘api’后面的值)"></a>options  (‘api’后面的值)</h2><ul>
+<li>options.target:要与url模块解析的url字符串</li>
+<li>option.forward：要用url模块解析的url字符串</li>
+<li>option.agent：要传递到http（s）的对象.request（请参阅节点的</li>
+<li>https代理和http代理对象）</li>
+<li>option.ssl：要传递给https.createServer（）的对象</li>
+<li>option.ws：true/ false：如果要代理websockets</li>
+<li>option.xfwd：true / false，添加x-forward标头</li>
+<li>option.secure：true / false，如果要验证SSL Certs</li>
+<li>option.toProxy：true / false，将绝对URL传递给path（用于代理代理）</li>
+<li>option.prependPath：true / false，默认值：true - 指定是否要将目标路径添加到代理路径</li>
+<li>option.ignorePath：true / false，默认值：false - 指定是否要忽略传入请求的代理路径（注意：如果需要，您将必须附加/手动）。</li>
+<li>option.localAddress：绑定传出连接的本地接口字符串</li>
+<li>option.changeOrigin：true / false，默认值：false - 将主机头的起始位置更改为目标URL</li>
+<li>option.auth：基本认证，即’user：password’来计算授权头。</li>
+<li>option.hostRewrite：重写（301/302/307/308）重定向上的位置主机名。</li>
+<li>option.autoRewrite：根据请求的主机/端口重写（301/302/307/308）重定向的位置主机/端口。默认值：false。</li>
+<li>option.protocolRewrite：将（301/302/307/308）上的位置协议重写为“http”或“https”。默认值：null。</li>
+<li>option.cookieDomainRewrite：重写set-cookie标题的域。可能的值：false（默认）：禁用cookie重写String：例如，新cookieDomainRewrite: “new.domain”。要删除域，请使用cookieDomainRewrite: “”。<br>对象：将域映射到新域，用于”*”匹配所有域。例如，保持一个域不变，重写一个域并删除其他域：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cookieDomainRewrite: &#123;</span><br><span class="line">&quot;unchanged.domain&quot;: &quot;unchanged.domain&quot;,</span><br><span class="line">&quot;old.domain&quot;: &quot;new.domain&quot;,</span><br><span class="line">&quot;*&quot;: &quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/11/05/js倒计时/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/05/js倒计时/" itemprop="url">js倒计时</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-05T10:47:40+08:00">
+                2018-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>摘抄自：<a href="https://zhuanlan.zhihu.com/p/20832837" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/20832837</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @author xiaojue</span><br><span class="line"> * @date 20160420</span><br><span class="line"> * @fileoverview 倒计时想太多版</span><br><span class="line"> */</span><br><span class="line">(function() &#123;</span><br><span class="line"></span><br><span class="line">  function timer(delay) &#123;</span><br><span class="line">    this._queue = [];</span><br><span class="line">    this.stop = false;</span><br><span class="line">    this._createTimer(delay);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  timer.prototype = &#123;</span><br><span class="line">    constructor: timer,</span><br><span class="line">    _createTimer: function(delay) &#123;</span><br><span class="line">      var self = this;</span><br><span class="line">      var first = true;</span><br><span class="line">      (function() &#123;</span><br><span class="line">        var s = new Date();</span><br><span class="line">        for (var i = 0; i &lt; self._queue.length; i++) &#123;</span><br><span class="line">          self._queue[i]();</span><br><span class="line">        &#125;</span><br><span class="line">        if (!self.stop) &#123;</span><br><span class="line">          var cost = new Date() - s;</span><br><span class="line">          delay = first ? delay : ((cost &gt; delay) ? cost - delay : delay);</span><br><span class="line">          setTimeout(arguments.callee, delay);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)();</span><br><span class="line">      first = false;</span><br><span class="line">    &#125;,</span><br><span class="line">    add: function(cb) &#123;</span><br><span class="line">      this._queue.push(cb);</span><br><span class="line">      this.stop = false;</span><br><span class="line">      return this._queue.length - 1;</span><br><span class="line">    &#125;,</span><br><span class="line">    remove: function(index) &#123;</span><br><span class="line">      this._queue.splice(index, 1);</span><br><span class="line">      if(!this._queue.length)&#123;</span><br><span class="line">        this.stop = true;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  function TimePool()&#123;</span><br><span class="line">    this._pool = &#123;&#125;; </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  TimePool.prototype = &#123;</span><br><span class="line">    constructor:TimePool,</span><br><span class="line">    getTimer:function(delayTime)&#123;</span><br><span class="line">      var t = this._pool[delayTime];</span><br><span class="line">      return t ? t : (this._pool[delayTime] = new timer(delayTime));</span><br><span class="line">    &#125;,</span><br><span class="line">    removeTimer:function(delayTime)&#123;</span><br><span class="line">      if(this._pool[delayTime])&#123;</span><br><span class="line">        delete this._pool[delayTime];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  var delayTime = 1000;</span><br><span class="line">  var msInterval = new TimePool().getTimer(delayTime);</span><br><span class="line"></span><br><span class="line">  function countDown(config) &#123;</span><br><span class="line">    var defaultOptions = &#123;</span><br><span class="line">      fixNow: 3 * 1000,</span><br><span class="line">      fixNowDate: false,</span><br><span class="line">      now: new Date().valueOf(),</span><br><span class="line">      template: &apos;&#123;d&#125;:&#123;h&#125;:&#123;m&#125;:&#123;s&#125;&apos;,</span><br><span class="line">      render: function(outstring) &#123;</span><br><span class="line">        console.log(outstring);</span><br><span class="line">      &#125;,</span><br><span class="line">      end: function() &#123;</span><br><span class="line">        console.log(&apos;the end!&apos;);</span><br><span class="line">      &#125;,</span><br><span class="line">      endTime: new Date().valueOf() + 5 * 1000 * 60</span><br><span class="line">    &#125;;</span><br><span class="line">    for (var i in defaultOptions) &#123;</span><br><span class="line">      if (defaultOptions.hasOwnProperty(i)) &#123;</span><br><span class="line">        this[i] = config[i] || defaultOptions[i];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    this.init();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  countDown.prototype = &#123;</span><br><span class="line">    constructor: countDown,</span><br><span class="line">    init: function() &#123;</span><br><span class="line">      var self = this;</span><br><span class="line">      if (this.fixNowDate) &#123;</span><br><span class="line">        var fix = new timer(this.fixNow);</span><br><span class="line">        fix.add(function() &#123;</span><br><span class="line">          self.getNowTime(function(now) &#123;</span><br><span class="line">            self.now = now;</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      var index = msInterval.add(function() &#123;</span><br><span class="line">        self.now += delayTime;</span><br><span class="line">        if (self.now &gt;= self.endTime) &#123;</span><br><span class="line">          msInterval.remove(index);</span><br><span class="line">          self.end();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          self.render(self.getOutString());</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    getBetween: function() &#123;</span><br><span class="line">      return _formatTime(this.endTime - this.now);</span><br><span class="line">    &#125;,</span><br><span class="line">    getOutString: function() &#123;</span><br><span class="line">      var between = this.getBetween();</span><br><span class="line">      return this.template.replace(/&#123;(\w*)&#125;/g, function(m, key) &#123;</span><br><span class="line">        return between.hasOwnProperty(key) ? between[key] : &quot;&quot;;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    getNowTime: function(cb) &#123;</span><br><span class="line">      var xhr = new XMLHttpRequest();</span><br><span class="line">      xhr.open(&apos;get&apos;, &apos;/&apos;, true);</span><br><span class="line">      xhr.onreadystatechange = function() &#123;</span><br><span class="line">        if (xhr.readyState === 3) &#123;</span><br><span class="line">          var now = xhr.getResponseHeader(&apos;Date&apos;);</span><br><span class="line">          cb(new Date(now).valueOf());</span><br><span class="line">          xhr.abort();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">      xhr.send(null);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  function _cover(num) &#123;</span><br><span class="line">    var n = parseInt(num, 10);</span><br><span class="line">    return n &lt; 10 ? &apos;0&apos; + n : n;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function _formatTime(ms) &#123;</span><br><span class="line">    var s = ms / 1000,</span><br><span class="line">      m = s / 60;</span><br><span class="line">    return &#123;</span><br><span class="line">      d: _cover(m / 60 / 24),</span><br><span class="line">      h: _cover(m / 60 % 24),</span><br><span class="line">      m: _cover(m % 60),</span><br><span class="line">      s: _cover(s % 60)</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  var now = Date.now();</span><br><span class="line"></span><br><span class="line">  new countDown(&#123;&#125;);</span><br><span class="line">  new countDown(&#123;</span><br><span class="line">    endTime: now + 8 * 1000</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>主要说思路，实现分成几个步骤，第一个类是timer，通过setTimeout创建一个倒计时实例，内部对阻塞误差做了矫正，但是缺少一步，如果阻塞大于延迟时间，那么应该下次递归直接执行，而我这里还是会延迟1s，只是相对会减少误差。然后这个timer通过add和remove方法管理一个回调队列，让所有通过这个timer实现的倒计时都共用一个定时器。第二个类TimePool，主要实现一个timer池子，我们之前只想到了倒计时都是1s的，那如果有500ms或者10s的倒计时，这里这个池子是可以装多个timer类的，保证不同延迟下，定时器最小。最后一个类就是countDown类，里面同样是默认配置起手，然后主要介绍fixNowDate这个参数，是用来进行系统时间修正的，这里默认的实现是浏览器端的一个修正技巧，主要参见getNowTime方法，通过一个xhr请求拿服务端headers中的Date来进行矫正。</p>
+<p>之后摘出来了一个template，对输出的时间格式可以做一个简单的模板替换，抽象了3个公共类，最后的countDonw依赖其他2个类做了最终实现。最后，这段代码也可以复用在nodejs端，只需要修改getNowTime的方法为nodejs的即可。</p>
+<p>我的这段实现，没有考虑太多样式的可扩展，更多是性能上的，但是真实情况下性能如何，还需要实际验证，这一步是没有做的，而且只适用页面多定时器和倒计时的场景，可能还存在一些隐藏的未知bug</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/11/05/如何对小于10的数字进行补零操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/05/如何对小于10的数字进行补零操作/" itemprop="url">如何对小于10的数字进行补零操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-05T10:07:28+08:00">
+                2018-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>参考：<a href="https://zhuanlan.zhihu.com/p/20832837" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/20832837</a></p>
+<h1 id="npm的leftpad模块的实现"><a href="#npm的leftpad模块的实现" class="headerlink" title="npm的leftpad模块的实现"></a>npm的leftpad模块的实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function leftpad (str, len, ch) &#123;</span><br><span class="line">  str = String(str);</span><br><span class="line">  var i = -1;</span><br><span class="line">  if (!ch &amp;&amp; ch !== 0) ch = &apos; &apos;;</span><br><span class="line">  len = len - str.length;</span><br><span class="line">  while (++i &lt; len) &#123;</span><br><span class="line">    str = ch + str;</span><br><span class="line">  &#125;</span><br><span class="line">  return str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/28/使用vue遇到的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/28/使用vue遇到的问题/" itemprop="url">使用vue遇到的问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-28T17:33:19+08:00">
+                2018-10-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="eslint"><a href="#eslint" class="headerlink" title="eslint"></a>eslint</h1><ol>
+<li>问题：报错：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The keyword &apos;import&apos; is reserved</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>背景：使用iview-admin精简版打开eslint后就在下面代码处报<code>import</code>错，在<code>main.js</code>里引用vue哪里的<code>import</code>确没有报错。而且使用vue-cli3安装的项目（初始化时选择了eslint）里确不会出现这个问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">meta: &#123;</span><br><span class="line">      title: &apos;Login - 登录&apos;,</span><br><span class="line">      hideInMenu: true</span><br><span class="line">    &#125;,</span><br><span class="line">    component: () =&gt; import(/* webpackChunkName: &quot;about&quot; */ &apos;@/view/login/login.vue&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>解决方法：经过对比iview-admin精简版里的<code>eslintrc.js</code>文件和vue-cli3初始化得到的<code>eslintrc.js</code>文件得到解决方法，加上这个配置可解决问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  root: true,</span><br><span class="line">  &apos;extends&apos;: [</span><br><span class="line">    &apos;plugin:vue/essential&apos;,</span><br><span class="line">    &apos;@vue/standard&apos;</span><br><span class="line">  ],</span><br><span class="line">  rules: &#123;</span><br><span class="line">    // allow async-await</span><br><span class="line">    &apos;generator-star-spacing&apos;: &apos;off&apos;,</span><br><span class="line">    // allow debugger during development</span><br><span class="line">    &apos;no-debugger&apos;: process.env.NODE_ENV === &apos;production&apos; ? &apos;error&apos; : &apos;off&apos;,</span><br><span class="line">    &apos;vue/no-parsing-error&apos;: [2, &#123; &apos;x-invalid-end-tag&apos;: false &#125;]</span><br><span class="line">  &#125;,</span><br><span class="line">  // 加上下面这个配置可以解决问题</span><br><span class="line">  &quot;parserOptions&quot;: &#123;</span><br><span class="line">    &quot;parser&quot;: &quot;babel-eslint&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/28/使用iview遇到的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/28/使用iview遇到的问题/" itemprop="url">使用iview遇到的问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-28T16:31:10+08:00">
+                2018-10-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用iview框架和iview-admin遇到的问题记录</p>
+<h1 id="iview"><a href="#iview" class="headerlink" title="iview"></a>iview</h1><h1 id="iview-admin"><a href="#iview-admin" class="headerlink" title="iview-admin"></a>iview-admin</h1><h2 id="使用-iview-admin-简化版模板"><a href="#使用-iview-admin-简化版模板" class="headerlink" title="使用 iview-admin 简化版模板"></a>使用 iview-admin 简化版模板</h2><ol>
+<li>问题背景：在使用iview-admin简化版模板的过程中，当我使用 <code>Select</code> 标签时出现问题：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue.runtime.esm.js?329b:587 [Vue warn]: Error in render: &quot;TypeError: Cannot read property &apos;_t&apos; of undefined&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>问题分析：因为在 iview的 <code>Select</code> 标签中使用了 <code>i18n</code>，所以我们要为 <code>iview</code> 添加 <code>i18n</code> 配置项<br>解决方法：在使用 iview 时添加<code>i18n</code>配置项。具体为：在<code>main.js</code>文件中，将 <code>Vue.use(iView)</code> 替换为 <code>{
+  i18n: (key, value) =&gt; i18n.t(key, value)
+}</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/25/获取浏览器可视区宽高/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/获取浏览器可视区宽高/" itemprop="url">获取浏览器可视区宽高</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-25T15:36:58+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>参考：<a href="https://www.cnblogs.com/pengchengzhong/p/6050644.html" target="_blank" rel="noopener">https://www.cnblogs.com/pengchengzhong/p/6050644.html</a><br>获取浏览器可视区宽高要考虑兼容情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function getViewXY () &#123;</span><br><span class="line">	let w = window,</span><br><span class="line">    d = document,</span><br><span class="line">    e = d.documentElement,</span><br><span class="line">    g = d.getElementsByTagName(&apos;body&apos;)[0],</span><br><span class="line">    x = w.innerWidth || e.clientWidth || g.clientWidth,</span><br><span class="line">    y = w.innerHeight|| e.clientHeight|| g.clientHeight;</span><br><span class="line">    return &#123;width: x, height: y&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/25/test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/test/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-25T11:22:27+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            var EventUtil = {
+	addHandler: function (element, type, handler) {
+		if (element.addEventListener) {
+			element.addEventListener(type, handler, false);
+		} else if (element.attachEvent) {
+			element.attachEvent('on' + type, handler);
+		} else {
+			element['on' + type] = handler;
+		}
+	},
+	removeHandler: function (element, type, handler) {
+		if (element.removeEventListener) {
+			element.removeEventListener(type, handler, false);
+		} else if (element.detachEvent) {
+			element.detachEvent('on' + type, handler);
+		} else {
+			element['on' + type] = null;
+		}
+	},
+	getEvent: function (event) {
+		return event ? event: window.event;
+	},
+	getTarget: function (event) {
+		return event.target || event.srcElement;
+	},
+	preventDefault: function (event) {
+		if (event.preventDefault) {
+			event.preventDefault();
+		} else {
+			event.returnValue = false;
+		}
+	}
+}
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/25/跨浏览器DOM事件方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/25/跨浏览器DOM事件方法/" itemprop="url">跨浏览器DOM事件方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-25T11:20:40+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">var EventUtil = &#123;</span><br><span class="line">	// 添加事件</span><br><span class="line">	addHandler: function (element, type, handler) &#123;</span><br><span class="line">		if (element.addEventListener) &#123;</span><br><span class="line">			element.addEventListener(type, handler, false);</span><br><span class="line">		&#125; else if (element.attachEvent) &#123;</span><br><span class="line">			element.attachEvent(&quot;on&quot; + type, handler);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			element[&quot;on&quot; + type] = handler;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 移除事件</span><br><span class="line">	removeHandler: function (element, type, handler) &#123;</span><br><span class="line">		if (element.removeEventListener) &#123;</span><br><span class="line">			element.removeEventListener(type, handler, false);</span><br><span class="line">		&#125; else if (element.detachEvent) &#123;</span><br><span class="line">			element.detachEvent(&quot;on&quot; + type, handler);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			element[&quot;on&quot; + type] = null;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	// 获取事件对象</span><br><span class="line">	getEvent: function (event) &#123;</span><br><span class="line">		return event ? event : window.event;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 获取目标对象</span><br><span class="line">	getTarget: function (event) &#123;</span><br><span class="line">		return event.target || event.srcElement;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 阻止默认事件</span><br><span class="line">	preventDefault: function (event) &#123;</span><br><span class="line">		if (event.preventDefault) &#123;</span><br><span class="line">			event.preventDefault();</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			event.returnValue = false;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 阻止（冒泡）事件传播</span><br><span class="line">	stopPropagation: function (event) &#123;</span><br><span class="line">		if (event.stopPropagation) &#123;</span><br><span class="line">			event.stopPropagation();</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			event.cancelBubble = true;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 获取鼠标按键</span><br><span class="line">	getButton: function (event) &#123;</span><br><span class="line">		if (document.implementation.hasFeature(&quot;MouseEvents&quot;, &quot;2.0&quot;)) &#123;</span><br><span class="line">			return event.button;</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			switch (event.button) &#123;</span><br><span class="line">				case 0:</span><br><span class="line">				case 1:</span><br><span class="line">				case 3:</span><br><span class="line">				case 5:</span><br><span class="line">				case 7:</span><br><span class="line">					return 0;</span><br><span class="line">				case 2:</span><br><span class="line">				case 6:</span><br><span class="line">					return 2;</span><br><span class="line">				case 4:</span><br><span class="line">					return 1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/10/23/vue-cli3取消eslint/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/23/vue-cli3取消eslint/" itemprop="url">vue-cli3取消eslint</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T11:54:18+08:00">
+                2018-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>刚开始初始化项目时我们添加了eslint，但是后面项目里要整合别人的代码，那不规范的写法实在让人抓狂，由于工程量太大自己也没法对代码格式进行，所以只能取消eslint了</p>
+<h4 id="vue-cli2"><a href="#vue-cli2" class="headerlink" title="vue-cli2"></a>vue-cli2</h4><p>在vue-cli2中有一个配置项(在config/index.js里)，直接将<code>useEslint: true</code>改为<code>useEslint: false</code>就可以了。</p>
+<h4 id="vue-cli3"><a href="#vue-cli3" class="headerlink" title="vue-cli3"></a>vue-cli3</h4><p>在vue-cli3中没有这个配置，但可以用以下方法。</p>
+<p>选择生成的时候，有一个询问是否把插件配置文件写在package.json文件里还是单独的文件，这里我选择了写在package.json文件里<br>打开package.json文件有这么一段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&quot;eslintConfig&quot;: &#123;</span><br><span class="line">    &quot;root&quot;: true,</span><br><span class="line">    &quot;env&quot;: &#123;</span><br><span class="line">      &quot;node&quot;: true</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;extends&quot;: [</span><br><span class="line">      &quot;plugin:vue/essential&quot;,</span><br><span class="line">	  &quot;@vue/standard&quot; // 这行是选用的eslint规则配置，你的可能和我的不一样，删除即可，别忘了还有上面的‘，’</span><br><span class="line">    ],</span><br><span class="line">    &quot;rules&quot;: &#123;&#125;,</span><br><span class="line">    &quot;parserOptions&quot;: &#123;</span><br><span class="line">      &quot;parser&quot;: &quot;babel-eslint&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -1526,7 +1549,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1576,7 +1599,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1589,7 +1612,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

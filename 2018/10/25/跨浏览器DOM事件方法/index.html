@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="12345var EventUtil = &amp;#123;	addHandler: function () &amp;#123;			&amp;#125;&amp;#125;">
+<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566var EventUtil = &amp;#123;	// 添加事件	addHandler: function (element, type, handler)">
 <meta name="keywords" content="DOM事件 跨浏览器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="跨浏览器DOM事件方法">
 <meta property="og:url" content="https://frphoenix.github.io/2018/10/25/跨浏览器DOM事件方法/index.html">
 <meta property="og:site_name" content="Snow的个人博客">
-<meta property="og:description" content="12345var EventUtil = &amp;#123;	addHandler: function () &amp;#123;			&amp;#125;&amp;#125;">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566var EventUtil = &amp;#123;	// 添加事件	addHandler: function (element, type, handler)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T03:22:07.759Z">
+<meta property="og:updated_time" content="2018-11-14T08:28:43.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨浏览器DOM事件方法">
-<meta name="twitter:description" content="12345var EventUtil = &amp;#123;	addHandler: function () &amp;#123;			&amp;#125;&amp;#125;">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566var EventUtil = &amp;#123;	// 添加事件	addHandler: function (element, type, handler)">
 
 
 
@@ -300,7 +300,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var EventUtil = &#123;</span><br><span class="line">	addHandler: function () &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">var EventUtil = &#123;</span><br><span class="line">	// 添加事件</span><br><span class="line">	addHandler: function (element, type, handler) &#123;</span><br><span class="line">		if (element.addEventListener) &#123;</span><br><span class="line">			element.addEventListener(type, handler, false);</span><br><span class="line">		&#125; else if (element.attachEvent) &#123;</span><br><span class="line">			element.attachEvent(&quot;on&quot; + type, handler);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			element[&quot;on&quot; + type] = handler;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 移除事件</span><br><span class="line">	removeHandler: function (element, type, handler) &#123;</span><br><span class="line">		if (element.removeEventListener) &#123;</span><br><span class="line">			element.removeEventListener(type, handler, false);</span><br><span class="line">		&#125; else if (element.detachEvent) &#123;</span><br><span class="line">			element.detachEvent(&quot;on&quot; + type, handler);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			element[&quot;on&quot; + type] = null;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	// 获取事件对象</span><br><span class="line">	getEvent: function (event) &#123;</span><br><span class="line">		return event ? event : window.event;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 获取目标对象</span><br><span class="line">	getTarget: function (event) &#123;</span><br><span class="line">		return event.target || event.srcElement;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 阻止默认事件</span><br><span class="line">	preventDefault: function (event) &#123;</span><br><span class="line">		if (event.preventDefault) &#123;</span><br><span class="line">			event.preventDefault();</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			event.returnValue = false;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 阻止（冒泡）事件传播</span><br><span class="line">	stopPropagation: function (event) &#123;</span><br><span class="line">		if (event.stopPropagation) &#123;</span><br><span class="line">			event.stopPropagation();</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			event.cancelBubble = true;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	// 获取鼠标按键</span><br><span class="line">	getButton: function (event) &#123;</span><br><span class="line">		if (document.implementation.hasFeature(&quot;MouseEvents&quot;, &quot;2.0&quot;)) &#123;</span><br><span class="line">			return event.button;</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			switch (event.button) &#123;</span><br><span class="line">				case 0:</span><br><span class="line">				case 1:</span><br><span class="line">				case 3:</span><br><span class="line">				case 5:</span><br><span class="line">				case 7:</span><br><span class="line">					return 0;</span><br><span class="line">				case 2:</span><br><span class="line">				case 6:</span><br><span class="line">					return 2;</span><br><span class="line">				case 4:</span><br><span class="line">					return 1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -415,7 +415,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -428,7 +428,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

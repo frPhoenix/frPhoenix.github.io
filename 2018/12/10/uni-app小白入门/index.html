@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="先撸一遍uni-app 官网。这个网站也不错 uni-app从入门到精通下面是个人笔记，大部分是从官网上摘抄的重点 目录结构1234567891011121314┌─components            uni-app组件目录│  └─comp-a.vue         可复用的a组件├─hybrid                存放本地网页的目录，详见├─platforms">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uni-app小白入门">
+<meta property="og:url" content="https://frphoenix.github.io/2018/12/10/uni-app小白入门/index.html">
+<meta property="og:site_name" content="Snow的个人博客">
+<meta property="og:description" content="先撸一遍uni-app 官网。这个网站也不错 uni-app从入门到精通下面是个人笔记，大部分是从官网上摘抄的重点 目录结构1234567891011121314┌─components            uni-app组件目录│  └─comp-a.vue         可复用的a组件├─hybrid                存放本地网页的目录，详见├─platforms">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-20T03:46:27.958Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="uni-app小白入门">
+<meta name="twitter:description" content="先撸一遍uni-app 官网。这个网站也不错 uni-app从入门到精通下面是个人笔记，大部分是从官网上摘抄的重点 目录结构1234567891011121314┌─components            uni-app组件目录│  └─comp-a.vue         可复用的a组件├─hybrid                存放本地网页的目录，详见├─platforms">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://frphoenix.github.io/2018/12/10/uni-app小白入门/"/>
+
+
+
+
+
+  <title>uni-app小白入门 | Snow的个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Snow的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/12/10/uni-app小白入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">uni-app小白入门</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-10T22:26:33+08:00">
+                2018-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>先撸一遍<a href="https://uniapp.dcloud.io/" target="_blank" rel="noopener">uni-app 官网</a>。这个网站也不错 <a href="https://www.kancloud.cn/guobaoguo/uni-app/821778" target="_blank" rel="noopener">uni-app从入门到精通</a><br>下面是个人笔记，大部分是从官网上摘抄的重点</p>
+<h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">┌─components            uni-app组件目录</span><br><span class="line">│  └─comp-a.vue         可复用的a组件</span><br><span class="line">├─hybrid                存放本地网页的目录，详见</span><br><span class="line">├─platforms             存放各平台专用页面的目录，详见</span><br><span class="line">├─pages                 业务页面文件存放的目录</span><br><span class="line">│  ├─index</span><br><span class="line">│  │  └─index.vue       index页面</span><br><span class="line">│  └─list</span><br><span class="line">│     └─list.vue        list页面</span><br><span class="line">├─static                存放应用引用静态资源（如图片、视频等）的地方，注意：静态资源只能存放于此</span><br><span class="line">├─main.js               Vue初始化入口文件</span><br><span class="line">├─App.vue               应用配置，用来配置App全局样式以及监听 应用生命周期</span><br><span class="line">├─manifest.json         配置应用名称、appid、logo、版本等打包信息，详见</span><br><span class="line">└─pages.json            配置页面路由、导航条、选项卡等页面类信息，详见</span><br></pre></td></tr></table></figure>
+<p> <strong>Tips：</strong></p>
+<ul>
+<li>static 目录下的 js 文件不会被编译，如果里面有 es6 的代码，不经过转换直接运行，在手机设备上会报错。</li>
+<li>css、less/scss 等资源同样不要放在 static 目录下，建议这些公用的资源放在 common 目录下。</li>
+</ul>
+<h1 id="什么是‘nvue’，以及如何使用"><a href="#什么是‘nvue’，以及如何使用" class="headerlink" title="什么是‘nvue’，以及如何使用"></a>什么是‘nvue’，以及如何使用</h1><p>在官网中的<a href="https://uniapp.dcloud.io/use-weex?id=%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B" target="_blank" rel="noopener">在uni-app中使用Weex</a>可看到相关内容<br>Weex的文件的后缀名为 .nvue (native vue), uni-app中 .nvue 只会编译到 5+App 端。</p>
+<h1 id="如何使用-vuex"><a href="#如何使用-vuex" class="headerlink" title="如何使用 vuex"></a>如何使用 vuex</h1><p>相关文档可看官网<a href="https://uniapp.dcloud.io/use?id=typescript%E6%94%AF%E6%8C%81" target="_blank" rel="noopener">如何使用vuex</a></p>
+<p><strong>uni-app 内置了 vuex</strong> 我们不用安装vuex，直接使用即可</p>
+<ol>
+<li>首先在项目根目录下新建一个目录<code>store</code></li>
+<li><p>在<code>store</code>文件夹下新建文件<code>index.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//store/index.js</span><br><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Vuex from &apos;vuex&apos;</span><br><span class="line">Vue.use(Vuex)</span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">    state: &#123;...&#125;,</span><br><span class="line">    mutations: &#123;...&#125;,</span><br><span class="line">    actions: &#123;...&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export default store</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在项目根目录下的<code>main.js</code>里引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//main.js</span><br><span class="line">...</span><br><span class="line">import store from &apos;./store&apos;</span><br><span class="line">Vue.prototype.$store = store //这行是必须的</span><br><span class="line">const app = new Vue(&#123;</span><br><span class="line">    store,...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">//test.vue 使用时：</span><br><span class="line">import &#123;mapState,mapMutations&#125; from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">	computed: &#123;</span><br><span class="line">		...mapState([&apos;userName&apos;])</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	methods:&#123;</span><br><span class="line">		...mapMutations([&apos;changeLogo&apos;]),</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="定制主题"><a href="#定制主题" class="headerlink" title="定制主题"></a>定制主题</h1><p>配置一个主题文件，我这里使用 less 来写样式，这样可以用变量来设置颜色，然后在每个页面都引入这个文件来使用其中定义的颜色（不会导致这个主题文件在应用中出现多次），但是这样没法让用户切换主题</p>
+<h1 id="使用插槽slot"><a href="#使用插槽slot" class="headerlink" title="使用插槽slot"></a>使用插槽<strong>slot</strong></h1><p>#####在uni-app中使用插槽与在vue中几乎一样，但是在使用具名插槽时有一点区别：请看例子<br>定义一个组件m-button, 与vue没有区别：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view class=&quot;btn-wrap&quot; :class=&quot;&#123;&apos;default&apos;: defaultAcitve&#125;&quot;&gt;</span><br><span class="line">		&lt;slot&gt; &lt;!-- 默认插槽 --&gt;</span><br><span class="line">			&lt;view&gt;</span><br><span class="line">				&#123;&#123;text&#125;&#125;</span><br><span class="line">			&lt;/view&gt;</span><br><span class="line">		&lt;/slot&gt; </span><br><span class="line">		&lt;slot name=&quot;icon&quot;&gt;&lt;/slot&gt; &lt;!-- 具名插槽 icon --&gt;</span><br><span class="line">		&lt;slot name=&quot;text&quot;&gt;&lt;/slot&gt; &lt;!-- 具名插槽 text --&gt;</span><br><span class="line">	&lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<p>使用具名插槽有区别<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;m-button&gt;</span><br><span class="line">	&lt;view class=&quot;mine-btn&quot;&gt;</span><br><span class="line">		&lt;image class=&quot;image&quot; src=&quot;../../static/images/contact.png&quot; mode=&quot;&quot;&gt;&lt;/image&gt; 来自默认插槽</span><br><span class="line">	&lt;/view&gt;</span><br><span class="line">	&lt;template slot=&quot;icon&quot;&gt;</span><br><span class="line">		&lt;image class=&quot;image&quot; src=&quot;../../static/images/contact.png&quot; mode=&quot;&quot;&gt;&lt;/image&gt;</span><br><span class="line">	&lt;/template&gt;</span><br><span class="line">	&lt;text slot=&quot;text&quot;&gt;来自text插槽&lt;/text&gt;</span><br><span class="line">&lt;/m-button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>注意事项：</p>
+<ol>
+<li>在uni-app中使用默认插槽与在vue中使用默认插槽没有区别。在使用具名插槽时，添加slot属性的那个元素是不会被插入插槽的。也就是说上面的 ‘来自text插槽’ 。</li>
+<li>在循环中使用组件时，插槽里的变量无法生效，但不含变量的内容可以正常使用</li>
+<li>使用默认插槽时，被插入内容不要用 <code>&lt;template&gt;&lt;/template&gt;</code> 标签包裹</li>
+</ol>
+<h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><ol>
+<li>对 <strong>text</strong> 标签的行高只能比默认的高，没法设置的比默认值跟小。解决办法是在<strong>text</strong>的父标签（如<strong>view</strong>）中设置行高</li>
+<li>组件的样式会被编译到引用它的那个页面中去，所以组件的样式可能会污染页面。解决办法是在组件最外层元素上添加一个唯一的class名（也可是id），然后其他类名就都是在这个类名之下了，也就构成了为选择器，就不会选中组件以外的元素了。</li>
+<li>暂不支持在组件上使用 Class 与 Style 来设置样式</li>
+<li>data()定义变量需要注意，变量不能重名，包括对象的健值。如下，<code>articles.title</code> 得到的结果是 ‘首页’。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">title: &apos;首页&apos;,</span><br><span class="line">articles: [</span><br><span class="line">	&#123;</span><br><span class="line">		title: &apos;法律文章标题&apos;,</span><br><span class="line">		content: &apos;法律文章内容，河南省高院审理案件时，故意忽略关键证据，导致被告被误判。经我方评查后，上诉成功。&apos;</span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		title: &apos;法律文章标题&apos;,</span><br><span class="line">		content: &apos;法律文章内容，河南省高院审理案件时，故意忽略关键证据，导致被告被误判。经我方评查后，上诉成功。&apos;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/06/flex布局学习/" rel="next" title="flex布局学习">
+                <i class="fa fa-chevron-left"></i> flex布局学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/17/js实现桌面全屏与退出/" rel="prev" title="js实现浏览器全屏与退出">
+                js实现浏览器全屏与退出 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/images/avatar.png"
+                alt="Snow Liu" />
+            
+              <p class="site-author-name" itemprop="name">Snow Liu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录结构"><span class="nav-number">1.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是‘nvue’，以及如何使用"><span class="nav-number">2.</span> <span class="nav-text">什么是‘nvue’，以及如何使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何使用-vuex"><span class="nav-number">3.</span> <span class="nav-text">如何使用 vuex</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定制主题"><span class="nav-number">4.</span> <span class="nav-text">定制主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用插槽slot"><span class="nav-number">5.</span> <span class="nav-text">使用插槽slot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#坑"><span class="nav-number">6.</span> <span class="nav-text">坑</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Snow Liu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

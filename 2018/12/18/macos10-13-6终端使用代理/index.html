@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="配置这个代理断断续续弄了好几次，跨度有5、6个月之久，所以好多都记不清了！ 列出所有用到的网站 通过ProxyChains让Iterm终端上网 socks5代理 https://lvii.gitbooks.io/outman/content/ss.mac.html 安装proxychains-ng，使用socks5https://blog.csdn.net/yjk13703623757/artic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="macos10.13.6终端使用代理">
+<meta property="og:url" content="https://frphoenix.github.io/2018/12/18/macos10-13-6终端使用代理/index.html">
+<meta property="og:site_name" content="Snow的个人博客">
+<meta property="og:description" content="配置这个代理断断续续弄了好几次，跨度有5、6个月之久，所以好多都记不清了！ 列出所有用到的网站 通过ProxyChains让Iterm终端上网 socks5代理 https://lvii.gitbooks.io/outman/content/ss.mac.html 安装proxychains-ng，使用socks5https://blog.csdn.net/yjk13703623757/artic">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://frphoenix.github.io/uploads/images/mac/shadowsocks1.jpg">
+<meta property="og:image" content="https://frphoenix.github.io/uploads/images/mac/shadowsocks2.jpg">
+<meta property="og:image" content="https://frphoenix.github.io/uploads/images/mac/shadowsocks3.jpg">
+<meta property="og:updated_time" content="2018-12-18T08:46:54.825Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="macos10.13.6终端使用代理">
+<meta name="twitter:description" content="配置这个代理断断续续弄了好几次，跨度有5、6个月之久，所以好多都记不清了！ 列出所有用到的网站 通过ProxyChains让Iterm终端上网 socks5代理 https://lvii.gitbooks.io/outman/content/ss.mac.html 安装proxychains-ng，使用socks5https://blog.csdn.net/yjk13703623757/artic">
+<meta name="twitter:image" content="https://frphoenix.github.io/uploads/images/mac/shadowsocks1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://frphoenix.github.io/2018/12/18/macos10-13-6终端使用代理/"/>
+
+
+
+
+
+  <title>macos10.13.6终端使用代理 | Snow的个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Snow的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frphoenix.github.io/2018/12/18/macos10-13-6终端使用代理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Snow Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snow的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">macos10.13.6终端使用代理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-18T14:01:25+08:00">
+                2018-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>配置这个代理断断续续弄了好几次，跨度有5、6个月之久，所以好多都记不清了！</p>
+<h1 id="列出所有用到的网站"><a href="#列出所有用到的网站" class="headerlink" title="列出所有用到的网站"></a>列出所有用到的网站</h1><ul>
+<li><a href="http://haoweiguang.me/2017/05/08/Mac%E4%B8%8Bshadowsocks%E5%85%A8%E8%87%AA%E5%8A%A8%E5%9C%B0%E4%BB%A3%E7%90%86%E7%BF%BB%E5%A2%99/" target="_blank" rel="noopener">通过ProxyChains让Iterm终端上网</a></li>
+<li><a href="https://lvii.gitbooks.io/outman/content/ss.mac.html" target="_blank" rel="noopener">socks5代理</a> <code>https://lvii.gitbooks.io/outman/content/ss.mac.html</code></li>
+<li><a href="https://blog.csdn.net/yjk13703623757/article/details/79055460" target="_blank" rel="noopener">安装proxychains-ng，使用socks5</a><code>https://blog.csdn.net/yjk13703623757/article/details/79055460</code></li>
+<li><a href="https://blog.csdn.net/houzhiwen_yy/article/details/81774657" target="_blank" rel="noopener">添加启动别名</a><code>https://blog.csdn.net/houzhiwen_yy/article/details/81774657</code></li>
+<li><a href="https://github.com/mrdulin/blog/issues/18" target="_blank" rel="noopener">参考</a></li>
+</ul>
+<h1 id="首先是使用-shadowsocks"><a href="#首先是使用-shadowsocks" class="headerlink" title="首先是使用 shadowsocks"></a>首先是使用 shadowsocks</h1><p>安装 shadowsocks 软件以及如何使用网上教程一大堆，我这里就不赘述了，只放上几张关键性图片<br><img src="/uploads/images/mac/shadowsocks1.jpg" alt="shadowsocks"><br><img src="/uploads/images/mac/shadowsocks2.jpg" alt="shadowsocks"><br>如何查看shadowsocks代理使用的默认端口：<br>点击‘编辑自动模式的PAC’，然后会打开文件夹，该文件夹里有一个<code>gfwlist.js</code>文件，文件的开头就是设置的默认端口<br><img src="/uploads/images/mac/shadowsocks3.jpg" alt="shadowsocks"></p>
+<h3 id="查看-shadowsocks-客户端启用的端口："><a href="#查看-shadowsocks-客户端启用的端口：" class="headerlink" title="查看 shadowsocks 客户端启用的端口："></a>查看 shadowsocks 客户端启用的端口：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ lsof -iTCP -sTCP:LISTEN -n -P</span><br><span class="line">COMMAND     PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME</span><br><span class="line">rapportd    432 phoenix    3u  IPv4 0x3f111c47f0d3082b      0t0  TCP *:49173 (LISTEN)</span><br><span class="line">rapportd    432 phoenix    4u  IPv6 0x3f111c47f0d2ac63      0t0  TCP *:49173 (LISTEN)</span><br><span class="line">privoxy     479 phoenix    3u  IPv4 0x3f111c47f8e0718b      0t0  TCP *:8118 (LISTEN)</span><br><span class="line">privoxy     479 phoenix    4u  IPv4 0x3f111c47f8e07aeb      0t0  TCP 127.0.0.1:8118 (LISTEN)</span><br><span class="line">mysqld      711 phoenix   23u  IPv4 0x3f111c47f9ada18b      0t0  TCP 127.0.0.1:3306 (LISTEN)</span><br><span class="line">com.docke   771 phoenix   19u  IPv4 0x3f111c47f9079aeb      0t0  TCP *:10103 (LISTEN)</span><br><span class="line">com.docke   771 phoenix   20u  IPv6 0x3f111c47f0d2c363      0t0  TCP [::1]:10103 (LISTEN)</span><br><span class="line">Adobe\x20   793 phoenix   13u  IPv4 0x3f111c47f9e3caeb      0t0  TCP 127.0.0.1:15292 (LISTEN)</span><br><span class="line">Adobe\x20   793 phoenix   37u  IPv4 0x3f111c47f6f2318b      0t0  TCP 127.0.0.1:15393 (LISTEN)</span><br><span class="line">node        903 phoenix   15u  IPv4 0x3f111c47f85cfecb      0t0  TCP 127.0.0.1:49379 (LISTEN)</span><br><span class="line">node        903 phoenix   21u  IPv4 0x3f111c47f7e4982b      0t0  TCP 127.0.0.1:49388 (LISTEN)</span><br><span class="line">Shadowsoc 10604 phoenix    4u  IPv4 0x3f111c47fd29aaeb      0t0  TCP *:1080 (LISTEN) ## 我的socks5 端口</span><br><span class="line">Shadowsoc 10604 phoenix    7u  IPv4 0x3f111c47fa93f18b      0t0  TCP *:8090 (LISTEN)</span><br><span class="line">node      13139 phoenix   24u  IPv4 0x3f111c47f6f2444b      0t0  TCP *:8080 (LISTEN)</span><br></pre></td></tr></table></figure>
+<p>到这里你的浏览器应该已经能够访问 <a href="https://www.google.com" target="_blank" rel="noopener">https://www.google.com</a> 了，但是终端里还不能使用代理<br>检查方法是：在终端执行这个命令 <code>$ curl cip.cc</code>，得到这样子的结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">IP	: 122.233.242.233</span><br><span class="line">地址	: 中国  浙江  杭州</span><br><span class="line">运营商	: 电信</span><br><span class="line"></span><br><span class="line">数据二	: 浙江省杭州市 | 电信</span><br><span class="line"></span><br><span class="line">数据三	: 中国浙江省杭州市 | 电信</span><br><span class="line"></span><br><span class="line">URL	: http://www.cip.cc/122.233.242.233</span><br></pre></td></tr></table></figure></p>
+<h1 id="安装-proxychains-ng-来实现终端使用代理"><a href="#安装-proxychains-ng-来实现终端使用代理" class="headerlink" title="安装 proxychains-ng 来实现终端使用代理"></a>安装 proxychains-ng 来实现终端使用代理</h1><p><code>$ brew install proxychains-ng</code><br>安装好后我的配置文件在 <code>/usr/local/etc/proxychains.conf</code><br>需要再配置文件里配置如下项目：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">strict_chain</span><br><span class="line">proxy_dns</span><br><span class="line">remote_dns_subnet 224</span><br><span class="line">tcp_read_time_out 15000</span><br><span class="line">tcp_connect_time_out 8000</span><br><span class="line">localnet 127.0.0.0/255.0.0.0</span><br><span class="line"></span><br><span class="line">[ProxyList]</span><br><span class="line">socks5 127.0.0.1 1080 # 这是上面查看到的 socks5 端口</span><br></pre></td></tr></table></figure></p>
+<h3 id="启动与关闭终端代理"><a href="#启动与关闭终端代理" class="headerlink" title="启动与关闭终端代理"></a>启动与关闭终端代理</h3><p>启动代理：<br><code>export all_proxy=socks5://127.0.0.1:1080</code><br>关闭代理：<br><code>unset all_proxy</code></p>
+<p>启动代理后再执行命令<code>$ curl cip.cc</code>，得到这样子的结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">IP	: 45.124.137.39</span><br><span class="line">地址	: 日本  长野县  长野市</span><br><span class="line">运营商	: tsukaeru.net</span><br><span class="line"></span><br><span class="line">数据二	: 日本</span><br><span class="line"></span><br><span class="line">数据三	: 日本长野县</span><br><span class="line"></span><br><span class="line">URL	: http://www.cip.cc/45.124.137.39</span><br></pre></td></tr></table></figure></p>
+<p>这说明终端使用代理成功了</p>
+<h1 id="为启动-关闭代理命令添加别名"><a href="#为启动-关闭代理命令添加别名" class="headerlink" title="为启动/关闭代理命令添加别名"></a>为启动/关闭代理命令添加别名</h1><p>启动/关闭代理的命令太长，每次都要敲这么长的命令太麻烦了，可以配置别名来方便使用<br>在<code>.bash_profile</code>文件里添加两行代码: 编辑文件<code>vi ~/.bash_profile</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># proxy list </span><br><span class="line">alias proxy=’export all_proxy=socks5://127.0.0.1:1080’ #1080为HTTP监听端口号 </span><br><span class="line">alias unproxy=’unset all_proxy’</span><br></pre></td></tr></table></figure></p>
+<p>使用配置文件生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/17/js实现桌面全屏与退出/" rel="next" title="js实现浏览器全屏与退出">
+                <i class="fa fa-chevron-left"></i> js实现浏览器全屏与退出
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/18/vuecli3配置less全局变量/" rel="prev" title="vuecli3配置less全局变量">
+                vuecli3配置less全局变量 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/images/avatar.png"
+                alt="Snow Liu" />
+            
+              <p class="site-author-name" itemprop="name">Snow Liu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#列出所有用到的网站"><span class="nav-number">1.</span> <span class="nav-text">列出所有用到的网站</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#首先是使用-shadowsocks"><span class="nav-number">2.</span> <span class="nav-text">首先是使用 shadowsocks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看-shadowsocks-客户端启用的端口："><span class="nav-number">2.0.1.</span> <span class="nav-text">查看 shadowsocks 客户端启用的端口：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-proxychains-ng-来实现终端使用代理"><span class="nav-number">3.</span> <span class="nav-text">安装 proxychains-ng 来实现终端使用代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动与关闭终端代理"><span class="nav-number">3.0.1.</span> <span class="nav-text">启动与关闭终端代理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为启动-关闭代理命令添加别名"><span class="nav-number">4.</span> <span class="nav-text">为启动/关闭代理命令添加别名</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Snow Liu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
